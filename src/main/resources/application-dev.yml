@@ -23,7 +23,3 @@ logging:
 
 server:
   port: 8080
-
-token:
-  sessionTime: 60
-  signKey: jwt.secret
