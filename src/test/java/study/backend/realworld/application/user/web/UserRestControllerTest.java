@@ -21,6 +21,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -48,7 +49,7 @@ class UserRestControllerTest {
     private String testToken;
 
     @BeforeEach
-    private void setUp() {
+    void setUp() {
         testToken = "Token " + tokenGenerator.generateToken("user@email.com");
     }
 
@@ -70,6 +71,16 @@ class UserRestControllerTest {
                 .content(objectMapper.writeValueAsBytes(requestDTO)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.user.token").value("user@email.com"));
+    }
+
+    @Test
+    void when_user_find_success() throws Exception{
+        System.out.println(testToken);
+        mockMvc.perform(get("/api/user")
+                .header("Authorization", testToken)
+                .contentType(APPLICATION_JSON))
+                .andExpect(status().isOk());
+
     }
 
     private static Stream<Arguments> invalidRegisterDto() {
