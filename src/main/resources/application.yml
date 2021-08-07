@@ -1,3 +1,7 @@
+token:
+  sessionTime: 60
+  signKey: jwt.secret
+
 spring:
   datasource:
     url: jdbc:mariadb://127.0.0.1:3307/realworld_db?serverTimezone=Asia/Seoul&useSSL=false&characterEncoding=UTF-8
