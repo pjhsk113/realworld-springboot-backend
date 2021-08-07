@@ -2,10 +2,8 @@ package study.backend.realworld.application.user.web;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.UserService;
 import study.backend.realworld.application.user.web.request.LoginRequest;
@@ -36,5 +34,13 @@ public class UserRestController {
         String token = tokenGenerator.generateToken(user.getEmail());
 
         return ResponseEntity.ok(UserResponse.of(user, token));
+    }
+
+    @GetMapping("/user")
+    public ResponseEntity<UserResponse> find(@AuthenticationPrincipal User user,
+                                             @RequestHeader("Authorization") String authorization) {
+        return ResponseEntity.ok(
+                UserResponse.of(userService.find(user), authorization.split(" ")[1])
+        );
     }
 }

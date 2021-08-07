@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="" />
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="feat: properties 추가">
+      <change afterPath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/web/UserRestControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/web/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/web/UserRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/JwtTokenFilter.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -35,20 +43,29 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="study.backend.realworld.application.user.web" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="study.backend.realworld.infra.security" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.UserRestControllerTest.when_register_user_invalid_body">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -60,6 +77,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserRestControllerTest.when_register_user_invalid_body" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
+      <option name="METHOD_NAME" value="when_register_user_invalid_body(study.backend.realworld.application.user.web.request.RegisterRequest)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRestControllerTest.when_user_login_expect_is_failed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
+      <option name="METHOD_NAME" value="when_user_login_expect_is_failed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRestControllerTest.when_user_login_expect_is_ok" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
+      <option name="METHOD_NAME" value="when_user_login_expect_is_ok" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RealWorldApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="realWorld" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="study.backend.realworld.RealWorldApplication" />
@@ -67,6 +132,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserRestControllerTest.when_register_user_invalid_body" />
+        <item itemvalue="JUnit.UserRestControllerTest.when_user_login_expect_is_failed" />
+        <item itemvalue="JUnit.UserRestControllerTest.when_user_login_expect_is_ok" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,6 +154,7 @@
       <workItem from="1627862795462" duration="1560000" />
       <workItem from="1627890314157" duration="1163000" />
       <workItem from="1627891533598" duration="259000" />
+      <workItem from="1628322548862" duration="3211000" />
     </task>
     <task id="LOCAL-00001" summary="feat: repository 변경">
       <created>1627816463015</created>
@@ -104,7 +177,28 @@
       <option name="project" value="LOCAL" />
       <updated>1627891599113</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: api 문서 추가">
+      <created>1628322682315</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1628322682315</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: README 추가">
+      <created>1628322697583</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1628322697583</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: properties 추가">
+      <created>1628325538356</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628325538356</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,11 +229,32 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="feat: repository 변경" />
     <MESSAGE value="feat: repository init" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: repository init" />
+    <MESSAGE value="feat: api 문서 추가" />
+    <MESSAGE value="feat: README 추가" />
+    <MESSAGE value="feat: properties 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: properties 추가" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/web/UserRestController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/TokenGenerator.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

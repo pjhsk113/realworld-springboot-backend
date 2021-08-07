@@ -26,4 +26,9 @@ public class UserService {
         return userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new IllegalArgumentException("email not found"));
     }
+
+    public User find(User user) {
+        return userRepository.findById(user.getId()).orElseThrow(
+                () -> new IllegalArgumentException("user not found"));
+    }
 }
