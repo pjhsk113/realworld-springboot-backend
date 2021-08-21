@@ -1,57 +1,21 @@
 package study.backend.realworld.application.user.web;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.test.web.servlet.MockMvc;
-import study.backend.realworld.application.user.domain.UserRepository;
-import study.backend.realworld.application.user.domain.UserService;
+import study.backend.realworld.application.IntegrationTests;
 import study.backend.realworld.application.user.web.request.LoginRequest;
 import study.backend.realworld.application.user.web.request.RegisterRequest;
-import study.backend.realworld.infra.security.jwt.TokenGenerator;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(UserRestController.class)
-class UserRestControllerTest {
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @MockBean
-    private PasswordEncoder passwordEncoder;
-
-    @MockBean
-    private TokenGenerator tokenGenerator;
-
-    @MockBean
-    private UserService userService;
-
-    @MockBean
-    private UserRepository userRepository;
-
-    private String testToken;
-
-    @BeforeEach
-    void setUp() {
-        testToken = "Token " + tokenGenerator.generateToken("user@email.com");
-    }
+class UserRestControllerTest extends IntegrationTests {
 
     @MethodSource("invalidRegisterDto")
     @ParameterizedTest
@@ -63,21 +27,19 @@ class UserRestControllerTest {
     }
 
     @Test
-    void when_user_login_expect_is_failed() throws Exception {
+    void when_user_login_expect_is_success() throws Exception {
         LoginRequest requestDTO = new LoginRequest("user@email.com", "password");
 
         mockMvc.perform(post("/api/users/login")
                 .contentType(APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(requestDTO)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.user.token").value("user@email.com"));
+                .andExpect(status().isOk());
     }
 
     @Test
     void when_user_find_success() throws Exception{
-        System.out.println(testToken);
         mockMvc.perform(get("/api/user")
-                .header("Authorization", testToken)
+                .header("Authorization", setUpToken)
                 .contentType(APPLICATION_JSON))
                 .andExpect(status().isOk());
 
