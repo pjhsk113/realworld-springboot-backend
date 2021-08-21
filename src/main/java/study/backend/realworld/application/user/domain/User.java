@@ -1,6 +1,7 @@
 package study.backend.realworld.application.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.jsonwebtoken.lang.Assert;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,6 +42,9 @@ public class User {
     }
 
     public static User of(String email, String username, String password) {
+        Assert.notNull(email, "email has null");
+        Assert.notNull(username, "username has null");
+        Assert.notNull(password, "password has null");
         return new User(email, new Profile(username), password);
     }
 
