@@ -8,6 +8,7 @@ import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.UserService;
 import study.backend.realworld.application.user.web.request.LoginRequest;
 import study.backend.realworld.application.user.web.request.RegisterRequest;
+import study.backend.realworld.application.user.web.request.UpdateProfileRequest;
 import study.backend.realworld.application.user.web.response.UserResponse;
 import study.backend.realworld.infra.security.jwt.TokenGenerator;
 
@@ -42,5 +43,13 @@ public class UserRestController {
         return ResponseEntity.ok(
                 UserResponse.of(userService.find(user), authorization.split(" ")[1])
         );
+    }
+
+    @PutMapping("/user")
+    public ResponseEntity<UserResponse> update(@AuthenticationPrincipal User user,
+                                               @RequestBody @Valid UpdateProfileRequest profile,
+                                               @RequestHeader("Authorization") String authorization) {
+
+        return ResponseEntity.ok(UserResponse.of(userService.updateProfile(user), authorization.split(" ")[1]));
     }
 }
