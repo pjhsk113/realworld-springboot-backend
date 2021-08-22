@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="">
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="feat: custom exception 추가">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/Profile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/TokenGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/exception/DuplicateEmailException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/exception/DuplicateEmailException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/web/UserRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/web/UserRestControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +50,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -70,50 +73,18 @@
       <recent name="study.backend.realworld.application.user.web" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="study.backend.realworld.application.user.domain.exception" />
       <recent name="study.backend.realworld.infra.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserRestControllerTest">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserRestControllerTest.when_user_update_fail_duplicate_email">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TokenExtractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.infra.security.jwt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.infra.security.jwt" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.infra.security.jwt.TokenExtractorTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TokenExtractorTest.when_empty_string_extract_return_empty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.infra.security.jwt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.infra.security.jwt" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.infra.security.jwt.TokenExtractorTest" />
-      <option name="METHOD_NAME" value="when_empty_string_extract_return_empty" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,7 +104,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRestControllerTest.when_register_fail_duplicated_email" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserRestControllerTest.when_register_fail_duplicate_email" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
@@ -143,13 +114,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
       <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
-      <option name="METHOD_NAME" value="when_register_fail_duplicated_email" />
+      <option name="METHOD_NAME" value="when_register_fail_duplicate_email" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRestControllerTest.when_user_login_expect_is_failed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserRestControllerTest.when_user_login_fail_password_not_matched" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +130,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
       <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
-      <option name="METHOD_NAME" value="when_user_login_expect_is_failed" />
+      <option name="METHOD_NAME" value="when_user_login_fail_password_not_matched" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRestControllerTest.when_user_update_fail_duplicate_email" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
+      <option name="METHOD_NAME" value="when_user_update_fail_duplicate_email" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRestControllerTest.when_user_update_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
+      <option name="METHOD_NAME" value="when_user_update_success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRestControllerTest.when_user_update_fail_duplicate_email" />
+        <item itemvalue="JUnit.UserRestControllerTest.when_user_update_success" />
+        <item itemvalue="JUnit.UserRestControllerTest.when_user_login_fail_password_not_matched" />
+        <item itemvalue="JUnit.UserRestControllerTest.when_register_fail_duplicate_email" />
         <item itemvalue="JUnit.UserRestControllerTest" />
-        <item itemvalue="JUnit.UserRestControllerTest.when_register_fail_duplicated_email" />
-        <item itemvalue="JUnit.UserRestControllerTest.when_user_login_expect_is_failed" />
-        <item itemvalue="JUnit.TokenExtractorTest" />
-        <item itemvalue="JUnit.TokenExtractorTest.when_empty_string_extract_return_empty" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +200,8 @@
       <workItem from="1627890314157" duration="1163000" />
       <workItem from="1627891533598" duration="259000" />
       <workItem from="1628322548862" duration="10127000" />
-      <workItem from="1629535334384" duration="3593000" />
+      <workItem from="1629535334384" duration="7371000" />
+      <workItem from="1629613964127" duration="4237000" />
     </task>
     <task id="LOCAL-00001" summary="feat: repository 변경">
       <created>1627816463015</created>
@@ -269,7 +273,77 @@
       <option name="project" value="LOCAL" />
       <updated>1628331090184</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: User validate 단언문 추가">
+      <created>1629539160250</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1629539160250</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactor: 코드 import 정리">
+      <created>1629539206403</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1629539206403</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test: TokenExtractor 테스트 추가">
+      <created>1629539255754</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1629539255754</updated>
+    </task>
+    <task id="LOCAL-00014" summary="refactor: 테스트용 추상클래스 추가&#10;&#10;- 기존 UserRestControllerTest에서 가지고 있던 의존성을 분리&#10;- 공통 테스트 데이터 추가">
+      <created>1629539390073</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1629539390073</updated>
+    </task>
+    <task id="LOCAL-00015" summary="test: UserRestControllerTest 테스트 코드 수정&#10;&#10;- 테스트용 추상클래스 상속받도록 변경">
+      <created>1629539531879</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1629539531879</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: user Profile update endPoint 추가">
+      <created>1629539992720</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1629539992720</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: custom exception 추가">
+      <created>1629541900381</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1629541900381</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: custom exception 추가">
+      <created>1629618286414</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1629618286414</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: gitignore 추가">
+      <created>1629618307231</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1629618307231</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: update user endPoint 추가&#10;&#10;- 실패 시 exception status 코드 추가">
+      <created>1629618404882</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1629618404882</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,14 +388,23 @@
     <MESSAGE value="feat: user 정보 조회 api 추가" />
     <MESSAGE value="change: properties 파일 수정" />
     <MESSAGE value="test: user find test 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="test: user find test 추가" />
+    <MESSAGE value="feat: User validate 단언문 추가" />
+    <MESSAGE value="refactor: 코드 import 정리" />
+    <MESSAGE value="test: TokenExtractor 테스트 추가" />
+    <MESSAGE value="refactor: 테스트용 추상클래스 추가&#10;&#10;- 기존 UserRestControllerTest에서 가지고 있던 의존성을 분리&#10;- 공통 테스트 데이터 추가" />
+    <MESSAGE value="test: UserRestControllerTest 테스트 코드 수정&#10;&#10;- 테스트용 추상클래스 상속받도록 변경" />
+    <MESSAGE value="feat: user Profile update endPoint 추가" />
+    <MESSAGE value="feat: custom exception 추가" />
+    <MESSAGE value="feat: gitignore 추가" />
+    <MESSAGE value="feat: update user endPoint 추가&#10;&#10;- 실패 시 exception status 코드 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update user endPoint 추가&#10;&#10;- 실패 시 exception status 코드 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/web/UserRestController.java</url>
-          <line>32</line>
+          <line>34</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
