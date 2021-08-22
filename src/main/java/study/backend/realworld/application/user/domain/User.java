@@ -57,4 +57,11 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 
+    public void updateProfile(String email, Profile profile, String password) {
+        this.email = email;
+        this.profile = profile;
+        this.password = password;
+        updateTime();
+    }
+
 }

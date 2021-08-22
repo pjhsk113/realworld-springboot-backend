@@ -1,6 +1,7 @@
 package study.backend.realworld.application.user.domain;
 
 import lombok.Getter;
+import study.backend.realworld.application.user.domain.model.UpdateProfileModel;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -23,6 +24,12 @@ public class Profile {
 
     public Profile(String username) {
         this(username, null, null, false);
+    }
+
+    public Profile(UpdateProfileModel model) {
+        this.username = model.getUsername();
+        this.bio = model.getBio();
+        this.image = model.getImage();
     }
 
     protected Profile() { }
