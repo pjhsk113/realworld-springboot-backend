@@ -6,6 +6,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.UserService;
+import study.backend.realworld.application.user.domain.exception.UserNotFountException;
 import study.backend.realworld.application.user.web.request.LoginRequest;
 import study.backend.realworld.application.user.web.request.RegisterRequest;
 import study.backend.realworld.application.user.web.request.UpdateProfileRequest;
@@ -23,14 +24,14 @@ public class UserRestController {
     private final TokenGenerator tokenGenerator;
 
     @PostMapping("/users")
-    public ResponseEntity<UserResponse> register(@RequestBody @Valid RegisterRequest request) {
+    public ResponseEntity<UserResponse> register(@RequestBody @Valid RegisterRequest request) throws Exception {
         return ResponseEntity.ok(
                 UserResponse.of(userService.register(request.toRegisterRequest()))
         );
     }
 
     @PostMapping("/users/login")
-    public ResponseEntity<UserResponse> login(@RequestBody @Valid LoginRequest request) {
+    public ResponseEntity<UserResponse> login(@RequestBody @Valid LoginRequest request) throws Exception {
         User user = userService.login(request.toLoginRequest());
         String token = tokenGenerator.generateToken(user.getEmail());
 
@@ -39,7 +40,7 @@ public class UserRestController {
 
     @GetMapping("/user")
     public ResponseEntity<UserResponse> find(@AuthenticationPrincipal User user,
-                                             @RequestHeader("Authorization") String authorization) {
+                                             @RequestHeader("Authorization") String authorization) throws UserNotFountException {
         return ResponseEntity.ok(
                 UserResponse.of(userService.find(user), authorization.split(" ")[1])
         );
@@ -48,8 +49,8 @@ public class UserRestController {
     @PutMapping("/user")
     public ResponseEntity<UserResponse> update(@AuthenticationPrincipal User user,
                                                @RequestBody @Valid UpdateProfileRequest profile,
-                                               @RequestHeader("Authorization") String authorization) {
+                                               @RequestHeader("Authorization") String authorization) throws Exception {
 
-        return ResponseEntity.ok(UserResponse.of(userService.updateProfile(user), authorization.split(" ")[1]));
+        return ResponseEntity.ok(UserResponse.of(userService.updateProfile(user, profile.toUpdateProfileRequest()), authorization.split(" ")[1]));
     }
 }
