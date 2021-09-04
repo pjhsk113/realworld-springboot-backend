@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="feat: custom exception 추가">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/exception/DuplicateEmailException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/exception/DuplicateEmailException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/web/UserRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/web/UserRestControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +195,9 @@
       <workItem from="1627891533598" duration="259000" />
       <workItem from="1628322548862" duration="10127000" />
       <workItem from="1629535334384" duration="7371000" />
-      <workItem from="1629613964127" duration="4237000" />
+      <workItem from="1629613964127" duration="4500000" />
+      <workItem from="1630224005125" duration="6000" />
+      <workItem from="1630747685821" duration="306000" />
     </task>
     <task id="LOCAL-00001" summary="feat: repository 변경">
       <created>1627816463015</created>
@@ -343,7 +339,35 @@
       <option name="project" value="LOCAL" />
       <updated>1629618404882</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="feat: custom exception 반환 status code 추가">
+      <created>1629618433153</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1629618433153</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: user update정보 반환 메서드 추가">
+      <created>1629618507416</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1629618507416</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: User Update 구현&#10;&#10;- custom exception 코드 추가">
+      <created>1629618542243</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1629618542243</updated>
+    </task>
+    <task id="LOCAL-00024" summary="test: User Controller Test 추가&#10;&#10;- User쪽 endpoint 마무리">
+      <created>1629618584401</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1629618584401</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +421,11 @@
     <MESSAGE value="feat: custom exception 추가" />
     <MESSAGE value="feat: gitignore 추가" />
     <MESSAGE value="feat: update user endPoint 추가&#10;&#10;- 실패 시 exception status 코드 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update user endPoint 추가&#10;&#10;- 실패 시 exception status 코드 추가" />
+    <MESSAGE value="feat: custom exception 반환 status code 추가" />
+    <MESSAGE value="feat: user update정보 반환 메서드 추가" />
+    <MESSAGE value="feat: User Update 구현&#10;&#10;- custom exception 코드 추가" />
+    <MESSAGE value="test: User Controller Test 추가&#10;&#10;- User쪽 endpoint 마무리" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: User Controller Test 추가&#10;&#10;- User쪽 endpoint 마무리" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
