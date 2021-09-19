@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="" />
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/web/FollowRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/web/FollowRestController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -61,8 +67,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="study.backend.realworld.infra.security.jwt" />
       <recent name="study.backend.realworld.application.user.web" />
+      <recent name="study.backend.realworld.infra.security.jwt" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="study.backend.realworld.application.user.domain.exception" />
@@ -70,13 +76,15 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.UserRestControllerTest.when_user_update_fail_duplicate_email">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,7 +203,8 @@
       <workItem from="1629535334384" duration="7371000" />
       <workItem from="1629613964127" duration="4500000" />
       <workItem from="1630224005125" duration="6000" />
-      <workItem from="1630747685821" duration="688000" />
+      <workItem from="1630747685821" duration="945000" />
+      <workItem from="1632039442724" duration="1786000" />
     </task>
     <task id="LOCAL-00001" summary="feat: repository 변경">
       <created>1627816463015</created>
@@ -379,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630748239516</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="test: Follow Controller Test 추가&#10;&#10;- setUp 추가">
+      <created>1630748531481</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1630748531481</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +455,8 @@
     <MESSAGE value="test: User Controller Test 추가&#10;&#10;- User쪽 endpoint 마무리" />
     <MESSAGE value="feat: Follow Controller 추가" />
     <MESSAGE value="feat: Follow Controller endpoint 추가&#10;&#10;- unfollow, find 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Follow Controller endpoint 추가&#10;&#10;- unfollow, find 추가" />
+    <MESSAGE value="test: Follow Controller Test 추가&#10;&#10;- setUp 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: Follow Controller Test 추가&#10;&#10;- setUp 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
