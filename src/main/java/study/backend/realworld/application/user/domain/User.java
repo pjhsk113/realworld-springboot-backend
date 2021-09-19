@@ -6,6 +6,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import study.backend.realworld.application.user.domain.exception.ExistsUserException;
+import study.backend.realworld.application.user.domain.exception.UserNotFountException;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -78,5 +79,12 @@ public class User {
             throw new ExistsUserException();
         }
         this.follows.add(target);
+    }
+
+    public void unfollow(User target) throws UserNotFountException {
+        if (!this.follows.contains(target)) {
+            throw new UserNotFountException();
+        }
+        this.follows.remove(target);
     }
 }

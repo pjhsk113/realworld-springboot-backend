@@ -16,4 +16,11 @@ public class FollowService {
         user.follow(target);
         return new Profile(userName);
     }
+
+    public Profile unfollow(User user, String userName) throws UserNotFountException {
+        User target = userRepository.findByUsername(userName)
+                .orElseThrow(UserNotFountException::new);
+        user.unfollow(target);
+        return new Profile(userName);
+    }
 }
