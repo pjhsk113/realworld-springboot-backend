@@ -5,9 +5,12 @@ import io.jsonwebtoken.lang.Assert;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import study.backend.realworld.application.user.domain.exception.ExistsUserException;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -34,6 +37,12 @@ public class User {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @ManyToMany
+    @JoinTable(name = "user_follows",
+            joinColumns = @JoinColumn(name = "follower_id"),
+            inverseJoinColumns = @JoinColumn(name = "following_id"))
+    private List<User> follows = new ArrayList<>();
 
     private User(String email, Profile profile, String password) {
         this.email = email;
@@ -64,4 +73,10 @@ public class User {
         updateTime();
     }
 
+    public void follow(User target) throws ExistsUserException {
+        if (this.follows.contains(target)) {
+            throw new ExistsUserException();
+        }
+        this.follows.add(target);
+    }
 }
