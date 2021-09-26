@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.transaction.SystemException;
 
-@ResponseStatus(HttpStatus.UNAUTHORIZED)
+@ResponseStatus(HttpStatus.BAD_REQUEST)
 public class UserNotFountException extends SystemException {
     public UserNotFountException() {
         super("member not found");
