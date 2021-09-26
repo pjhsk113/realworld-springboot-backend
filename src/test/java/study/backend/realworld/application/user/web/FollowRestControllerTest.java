@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import study.backend.realworld.application.IntegrationTests;
 import study.backend.realworld.application.user.domain.User;
-import study.backend.realworld.application.user.domain.exception.ExistsUserException;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
