@@ -25,11 +25,11 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Embedded
-    private Profile profile;
-
     @Column(nullable = false)
     private String password;
+
+    @Embedded
+    private Profile profile;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "created_at")
