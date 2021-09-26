@@ -8,7 +8,6 @@ import study.backend.realworld.application.user.domain.exception.UserNotFountExc
 import study.backend.realworld.application.user.domain.model.UpdateProfileModel;
 import study.backend.realworld.application.user.domain.model.UserLoginModel;
 import study.backend.realworld.application.user.domain.model.UserRegisterModel;
-import study.backend.realworld.application.user.web.request.UpdateProfileRequest;
 
 @Service
 public class UserService {
