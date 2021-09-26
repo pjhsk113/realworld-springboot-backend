@@ -25,7 +25,7 @@ public class FollowRestController {
         return ResponseEntity.ok(ProfileResponse.of(profile));
     }
 
-    @DeleteMapping("/{username}/unfollow")
+    @DeleteMapping("/{username}/follow")
     public ResponseEntity<ProfileResponse> unFollow(@AuthenticationPrincipal User user, @PathVariable String username) throws UserNotFountException {
         Profile profile = followService.unfollow(user, username);
         return ResponseEntity.ok(ProfileResponse.of(profile));
