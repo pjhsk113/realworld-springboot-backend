@@ -7,6 +7,7 @@ import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.exception.ExistsUserException;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -42,4 +43,24 @@ class FollowRestControllerTest extends IntegrationTests {
                 .andExpect(status().isBadRequest());
     }
 
+    @Test
+    void when_unfollow_fail_cause_user_not_found() throws Exception {
+        String username = "unKnown";
+
+        mockMvc.perform(delete("/api/profiles/" + username + "/follow")
+                .contentType(APPLICATION_JSON)
+                .header(AUTHORIZATION, setUpToken))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void when_unfollow_success() throws Exception {
+        setUpUser.follow(user);
+        String username = "test";
+
+        mockMvc.perform(delete("/api/profiles/" + username + "/follow")
+                .contentType(APPLICATION_JSON)
+                .header(AUTHORIZATION, setUpToken))
+                .andExpect(status().isOk());
+    }
 }
