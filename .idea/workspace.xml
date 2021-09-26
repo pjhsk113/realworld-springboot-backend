@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="">
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="fix: Embededd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/realWorld.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/web/FollowRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/web/FollowRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/web/FollowRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/web/FollowRestControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -67,6 +67,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="study.backend.realworld.application.user.domain" />
       <recent name="study.backend.realworld.application.user.web" />
       <recent name="study.backend.realworld.infra.security.jwt" />
     </key>
@@ -75,16 +76,46 @@
       <recent name="study.backend.realworld.infra.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserRestControllerTest.when_user_update_fail_duplicate_email">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FollowRestControllerTest.when_follow_fail_exist_user">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FollowRestControllerTest.when_follow_fail_exist_user" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.FollowRestControllerTest" />
+      <option name="METHOD_NAME" value="when_follow_fail_exist_user" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FollowRestControllerTest.when_follow_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.FollowRestControllerTest" />
+      <option name="METHOD_NAME" value="when_follow_success" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,38 +131,6 @@
       <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
       <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRestControllerTest.when_register_fail_duplicate_email" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
-      <option name="METHOD_NAME" value="when_register_fail_duplicate_email" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRestControllerTest.when_user_login_fail_password_not_matched" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
-      <option name="METHOD_NAME" value="when_user_login_fail_password_not_matched" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,11 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FollowRestControllerTest.when_follow_fail_exist_user" />
+        <item itemvalue="JUnit.FollowRestControllerTest.when_follow_success" />
+        <item itemvalue="JUnit.UserRestControllerTest" />
         <item itemvalue="JUnit.UserRestControllerTest.when_user_update_fail_duplicate_email" />
         <item itemvalue="JUnit.UserRestControllerTest.when_user_update_success" />
-        <item itemvalue="JUnit.UserRestControllerTest.when_user_login_fail_password_not_matched" />
-        <item itemvalue="JUnit.UserRestControllerTest.when_register_fail_duplicate_email" />
-        <item itemvalue="JUnit.UserRestControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +203,8 @@
       <workItem from="1629613964127" duration="4500000" />
       <workItem from="1630224005125" duration="6000" />
       <workItem from="1630747685821" duration="945000" />
-      <workItem from="1632039442724" duration="1786000" />
+      <workItem from="1632039442724" duration="3120000" />
+      <workItem from="1632640318526" duration="3822000" />
     </task>
     <task id="LOCAL-00001" summary="feat: repository 변경">
       <created>1627816463015</created>
@@ -395,7 +395,77 @@
       <option name="project" value="LOCAL" />
       <updated>1630748531481</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feat: user 별 follow 목록 추가">
+      <created>1632041481506</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1632041481506</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: userName 검색 기능 추가">
+      <created>1632041520638</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1632041520638</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: User Follow endPoint 추가">
+      <created>1632041573213</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1632041573213</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: follow 기능 구현">
+      <created>1632041593118</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1632041593118</updated>
+    </task>
+    <task id="LOCAL-00032" summary="feat: custom Exception 추가&#10;&#10;- 이미 follow한 유저를 또 follow할 경우 발생">
+      <created>1632041656545</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1632041656545</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat: unfollow 기능 추가">
+      <created>1632042060272</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1632042060272</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactor: User password 컬럼 위치 변경">
+      <created>1632644868406</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1632644868406</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix: Profile의 username을 못찾던 문제 수정&#10;&#10;- Embedded의 이름을 명시해 username을 찾을 수 있도록 변경&#10;findByUsername -&gt; findByProfileUsername">
+      <created>1632644985190</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1632644985190</updated>
+    </task>
+    <task id="LOCAL-00036" summary="refactor: username 찾는 메서드명 변경">
+      <created>1632645032107</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1632645032107</updated>
+    </task>
+    <task id="LOCAL-00037" summary="refactor: 임포트 정리">
+      <created>1632645059591</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1632645059591</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,16 +501,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="feat: repository 변경" />
-    <MESSAGE value="feat: repository init" />
-    <MESSAGE value="feat: api 문서 추가" />
-    <MESSAGE value="feat: README 추가" />
-    <MESSAGE value="feat: properties 추가" />
-    <MESSAGE value="test: Controller Test" />
-    <MESSAGE value="feat: user 정보 조회 api 추가" />
-    <MESSAGE value="change: properties 파일 수정" />
-    <MESSAGE value="test: user find test 추가" />
-    <MESSAGE value="feat: User validate 단언문 추가" />
     <MESSAGE value="refactor: 코드 import 정리" />
     <MESSAGE value="test: TokenExtractor 테스트 추가" />
     <MESSAGE value="refactor: 테스트용 추상클래스 추가&#10;&#10;- 기존 UserRestControllerTest에서 가지고 있던 의존성을 분리&#10;- 공통 테스트 데이터 추가" />
@@ -456,7 +516,17 @@
     <MESSAGE value="feat: Follow Controller 추가" />
     <MESSAGE value="feat: Follow Controller endpoint 추가&#10;&#10;- unfollow, find 추가" />
     <MESSAGE value="test: Follow Controller Test 추가&#10;&#10;- setUp 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="test: Follow Controller Test 추가&#10;&#10;- setUp 추가" />
+    <MESSAGE value="feat: user 별 follow 목록 추가" />
+    <MESSAGE value="feat: userName 검색 기능 추가" />
+    <MESSAGE value="feat: User Follow endPoint 추가" />
+    <MESSAGE value="feat: follow 기능 구현" />
+    <MESSAGE value="feat: custom Exception 추가&#10;&#10;- 이미 follow한 유저를 또 follow할 경우 발생" />
+    <MESSAGE value="feat: unfollow 기능 추가" />
+    <MESSAGE value="refactor: User password 컬럼 위치 변경" />
+    <MESSAGE value="fix: Profile의 username을 못찾던 문제 수정&#10;&#10;- Embedded의 이름을 명시해 username을 찾을 수 있도록 변경&#10;findByUsername -&gt; findByProfileUsername" />
+    <MESSAGE value="refactor: username 찾는 메서드명 변경" />
+    <MESSAGE value="refactor: 임포트 정리" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 임포트 정리" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
