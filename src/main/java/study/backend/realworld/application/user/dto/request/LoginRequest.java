@@ -1,4 +1,4 @@
-package study.backend.realworld.application.user.web.request;
+package study.backend.realworld.application.user.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.AllArgsConstructor;

@@ -1,10 +1,13 @@
-package study.backend.realworld.application.user.domain;
+package study.backend.realworld.application.user.application;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import study.backend.realworld.application.user.domain.exception.DuplicateEmailException;
-import study.backend.realworld.application.user.domain.exception.PasswordNotMatchedException;
-import study.backend.realworld.application.user.domain.exception.UserNotFountException;
+import study.backend.realworld.application.user.domain.Profile;
+import study.backend.realworld.application.user.domain.User;
+import study.backend.realworld.application.user.repository.UserRepository;
+import study.backend.realworld.application.user.exception.DuplicateEmailException;
+import study.backend.realworld.application.user.exception.PasswordNotMatchedException;
+import study.backend.realworld.application.user.exception.UserNotFountException;
 import study.backend.realworld.application.user.domain.model.UpdateProfileModel;
 import study.backend.realworld.application.user.domain.model.UserLoginModel;
 import study.backend.realworld.application.user.domain.model.UserRegisterModel;

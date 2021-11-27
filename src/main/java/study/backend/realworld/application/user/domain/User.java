@@ -5,8 +5,8 @@ import io.jsonwebtoken.lang.Assert;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import study.backend.realworld.application.user.domain.exception.ExistsUserException;
-import study.backend.realworld.application.user.domain.exception.UserNotFountException;
+import study.backend.realworld.application.user.exception.ExistsUserException;
+import study.backend.realworld.application.user.exception.UserNotFountException;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

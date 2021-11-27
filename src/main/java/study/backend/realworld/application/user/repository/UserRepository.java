@@ -1,7 +1,8 @@
-package study.backend.realworld.application.user.domain;
+package study.backend.realworld.application.user.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import study.backend.realworld.application.user.domain.User;
 
 import java.util.Optional;
 

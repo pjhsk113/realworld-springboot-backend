@@ -1,4 +1,4 @@
-package study.backend.realworld.application.user.domain.exception;
+package study.backend.realworld.application.user.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

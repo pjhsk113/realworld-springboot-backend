@@ -1,4 +1,4 @@
-package study.backend.realworld.application.user.web.response;
+package study.backend.realworld.application.user.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Getter;

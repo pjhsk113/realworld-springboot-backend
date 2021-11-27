@@ -5,9 +5,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import study.backend.realworld.application.IntegrationTests;
-import study.backend.realworld.application.user.web.request.LoginRequest;
-import study.backend.realworld.application.user.web.request.RegisterRequest;
-import study.backend.realworld.application.user.web.request.UpdateProfileRequest;
+import study.backend.realworld.application.user.dto.request.LoginRequest;
+import study.backend.realworld.application.user.dto.request.RegisterRequest;
+import study.backend.realworld.application.user.dto.request.UpdateProfileRequest;
 
 import java.util.stream.Stream;
 

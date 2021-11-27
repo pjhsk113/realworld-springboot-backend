@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
 import study.backend.realworld.application.user.domain.User;
-import study.backend.realworld.application.user.domain.UserRepository;
+import study.backend.realworld.application.user.repository.UserRepository;
 import study.backend.realworld.infra.security.jwt.TokenGenerator;
 
 import javax.transaction.Transactional;

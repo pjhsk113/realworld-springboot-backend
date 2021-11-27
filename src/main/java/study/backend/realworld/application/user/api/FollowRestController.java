@@ -1,15 +1,15 @@
-package study.backend.realworld.application.user.web;
+package study.backend.realworld.application.user.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
-import study.backend.realworld.application.user.domain.FollowService;
+import study.backend.realworld.application.user.application.FollowService;
 import study.backend.realworld.application.user.domain.Profile;
 import study.backend.realworld.application.user.domain.User;
-import study.backend.realworld.application.user.domain.exception.ExistsUserException;
-import study.backend.realworld.application.user.domain.exception.UserNotFountException;
-import study.backend.realworld.application.user.web.response.ProfileResponse;
+import study.backend.realworld.application.user.exception.ExistsUserException;
+import study.backend.realworld.application.user.exception.UserNotFountException;
+import study.backend.realworld.application.user.dto.response.ProfileResponse;
 
 @RestController
 @RequiredArgsConstructor

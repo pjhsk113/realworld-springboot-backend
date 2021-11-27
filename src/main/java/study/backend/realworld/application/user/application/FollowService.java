@@ -1,8 +1,11 @@
-package study.backend.realworld.application.user.domain;
+package study.backend.realworld.application.user.application;
 
 import org.springframework.stereotype.Service;
-import study.backend.realworld.application.user.domain.exception.ExistsUserException;
-import study.backend.realworld.application.user.domain.exception.UserNotFountException;
+import study.backend.realworld.application.user.domain.Profile;
+import study.backend.realworld.application.user.domain.User;
+import study.backend.realworld.application.user.repository.UserRepository;
+import study.backend.realworld.application.user.exception.ExistsUserException;
+import study.backend.realworld.application.user.exception.UserNotFountException;
 
 @Service
 public class FollowService {

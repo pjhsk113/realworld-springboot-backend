@@ -1,16 +1,16 @@
-package study.backend.realworld.application.user.web;
+package study.backend.realworld.application.user.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import study.backend.realworld.application.user.domain.User;
-import study.backend.realworld.application.user.domain.UserService;
-import study.backend.realworld.application.user.domain.exception.UserNotFountException;
-import study.backend.realworld.application.user.web.request.LoginRequest;
-import study.backend.realworld.application.user.web.request.RegisterRequest;
-import study.backend.realworld.application.user.web.request.UpdateProfileRequest;
-import study.backend.realworld.application.user.web.response.UserResponse;
+import study.backend.realworld.application.user.application.UserService;
+import study.backend.realworld.application.user.exception.UserNotFountException;
+import study.backend.realworld.application.user.dto.request.LoginRequest;
+import study.backend.realworld.application.user.dto.request.RegisterRequest;
+import study.backend.realworld.application.user.dto.request.UpdateProfileRequest;
+import study.backend.realworld.application.user.dto.response.UserResponse;
 import study.backend.realworld.infra.security.jwt.TokenGenerator;
 
 import javax.validation.Valid;
