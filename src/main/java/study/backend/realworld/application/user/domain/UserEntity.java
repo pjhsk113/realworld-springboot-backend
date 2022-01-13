@@ -1,13 +1,14 @@
 package study.backend.realworld.application.user.domain;
 
+import io.jsonwebtoken.lang.Assert;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import study.backend.realworld.application.user.exception.ExistsUserException;
+import study.backend.realworld.application.user.exception.UserNotFountException;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Table(name = "users")
@@ -41,6 +42,23 @@ public class UserEntity {
     }
 
     public static UserEntity of(Email email, UserName name, Password password) {
+        Assert.notNull(email, "email has null");
+        Assert.notNull(name, "username has null");
+        Assert.notNull(password, "password has null");
         return new UserEntity(email, new ProfileEntity(name), password);
+    }
+
+    public void follow(User target) throws ExistsUserException {
+        if (this.follows.contains(target)) {
+            throw new ExistsUserException();
+        }
+        this.follows.add(target);
+    }
+
+    public void unfollow(User target) throws UserNotFountException {
+        if (!this.follows.contains(target)) {
+            throw new UserNotFountException();
+        }
+        this.follows.remove(target);
     }
 }
