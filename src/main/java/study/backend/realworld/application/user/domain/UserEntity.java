@@ -4,6 +4,7 @@ import io.jsonwebtoken.lang.Assert;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import study.backend.realworld.application.user.exception.ExistsUserException;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 
@@ -60,5 +61,9 @@ public class UserEntity {
             throw new UserNotFountException();
         }
         this.follows.remove(target);
+    }
+
+    public boolean matchesPassword(String rawPassword, PasswordEncoder passwordEncoder) {
+        return password.matchesPassword(rawPassword, passwordEncoder);
     }
 }
