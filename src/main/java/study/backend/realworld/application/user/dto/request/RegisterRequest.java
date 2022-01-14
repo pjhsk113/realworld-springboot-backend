@@ -4,9 +4,10 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import study.backend.realworld.application.user.domain.Email;
+import study.backend.realworld.application.user.domain.UserName;
 import study.backend.realworld.application.user.domain.model.UserRegisterModel;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @JsonRootName("user")
@@ -17,7 +18,7 @@ public class RegisterRequest {
     @NotBlank
     private String username;
 
-    @Email
+    @javax.validation.constraints.Email
     private String email;
 
     @NotBlank
@@ -25,8 +26,8 @@ public class RegisterRequest {
 
     public UserRegisterModel toRegisterRequest() {
         return new UserRegisterModel(
-                this.username,
-                this.email,
+                new UserName(username),
+                new Email(email),
                 this.password);
     }
 }

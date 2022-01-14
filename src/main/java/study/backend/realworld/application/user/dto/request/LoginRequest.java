@@ -2,26 +2,26 @@ package study.backend.realworld.application.user.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import study.backend.realworld.application.user.domain.Email;
 import study.backend.realworld.application.user.domain.model.UserLoginModel;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @JsonRootName("user")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
 public class LoginRequest {
-    @Email
+    @javax.validation.constraints.Email
     private String email;
     @NotBlank
     private String password;
 
     public UserLoginModel toLoginRequest() {
         return new UserLoginModel(
-                this.email,
+                new Email(this.email),
                 this.password
         );
     }
