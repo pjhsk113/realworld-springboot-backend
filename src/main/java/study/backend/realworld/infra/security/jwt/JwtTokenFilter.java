@@ -6,6 +6,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import study.backend.realworld.application.user.domain.Email;
 import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.repository.UserRepository;
 
@@ -37,7 +38,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
             TokenProvider tokenProvider = new TokenProvider(signKey, accessToken);
             String subject = tokenProvider.parseToken().orElseThrow(TokenParseException::new);
-            User user = userRepository.findByEmail(subject).orElseThrow(
+            User user = userRepository.findByEmail(new Email(subject)).orElseThrow(
                     () -> new IllegalArgumentException("user not found"));
 
             if (SecurityContextHolder.getContext().getAuthentication() == null) {

@@ -1,83 +1,59 @@
 package study.backend.realworld.application.user.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.jsonwebtoken.lang.Assert;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import study.backend.realworld.application.user.exception.ExistsUserException;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-@Entity
+@Table(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Table(name = "users")
+@Entity
 public class User {
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @Column(nullable = false)
-    private String password;
+    @Embedded
+    private Email email;
 
     @Embedded
     private Profile profile;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    @Embedded
+    private Password password;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-
-    @ManyToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     @JoinTable(name = "user_follows",
             joinColumns = @JoinColumn(name = "follower_id"),
             inverseJoinColumns = @JoinColumn(name = "following_id"))
-    private List<User> follows = new ArrayList<>();
+    private Set<User> follows = new HashSet<>();
 
-    private User(String email, Profile profile, String password) {
+    private User(Email email, Profile profile, Password password) {
         this.email = email;
         this.profile = profile;
         this.password = password;
     }
 
-    public static User of(String email, String username, String password) {
+    public static User of(Email email, UserName name, Password password) {
         Assert.notNull(email, "email has null");
-        Assert.notNull(username, "username has null");
+        Assert.notNull(name, "username has null");
         Assert.notNull(password, "password has null");
-        return new User(email, new Profile(username), password);
-    }
-
-    void setCurrentTime() {
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
-    }
-
-    void updateTime() {
-        this.updatedAt = LocalDateTime.now();
-    }
-
-    public void updateProfile(String email, Profile profile, String password) {
-        this.email = email;
-        this.profile = profile;
-        this.password = password;
-        updateTime();
+        return new User(email, new Profile(name), password);
     }
 
     public void follow(User target) throws ExistsUserException {
         if (this.follows.contains(target)) {
             throw new ExistsUserException();
         }
+
         this.follows.add(target);
     }
 
@@ -87,4 +63,33 @@ public class User {
         }
         this.follows.remove(target);
     }
+
+    public boolean matchesPassword(String rawPassword, PasswordEncoder passwordEncoder) {
+        return password.matchesPassword(rawPassword, passwordEncoder);
+    }
+
+    public UserName getName() {
+        return profile.getUserName();
+    }
+
+    public String getBio() {
+        return profile.getBio();
+    }
+
+    public Image getImage() {
+        return profile.getImage();
+    }
+
+    public void changeEmail(Email email) {
+        this.email = email;
+    }
+
+    public void changePassword(Password password) {
+        this.password = password;
+    }
+
+    public void changeName(UserName userName) {
+        profile.changeUserName(userName);
+    }
+
 }

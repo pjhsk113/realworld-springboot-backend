@@ -2,7 +2,7 @@ package study.backend.realworld.application.user.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Getter;
-import study.backend.realworld.application.user.domain.UserEntity;
+import study.backend.realworld.application.user.domain.User;
 
 import static java.lang.String.valueOf;
 
@@ -23,7 +23,7 @@ public class UserResponse {
         this.image = image;
     }
 
-    public static UserResponse of(UserEntity user) {
+    public static UserResponse of(User user) {
         return new UserResponse(
                 valueOf(user.getEmail()),
                 "",
@@ -32,7 +32,7 @@ public class UserResponse {
                 valueOf(user.getImage()));
     }
 
-    public static UserResponse of(UserEntity user, String token) {
+    public static UserResponse of(User user, String token) {
         return new UserResponse(
                 valueOf(user.getEmail()),
                 token,

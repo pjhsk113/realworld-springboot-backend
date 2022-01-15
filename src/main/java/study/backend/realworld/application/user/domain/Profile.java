@@ -1,37 +1,48 @@
 package study.backend.realworld.application.user.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
-import study.backend.realworld.application.user.domain.model.UpdateProfileModel;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 @Embeddable
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Profile {
-    @Column(nullable = false, unique = true)
-    private String username;
+    @Embedded
+    private UserName userName;
+
+    @Column(name = "bio")
     private String bio;
-    private String image;
+
+    @Embedded
+    private Image image;
+
     private boolean following;
 
-    private Profile(String username, String bio, String image, boolean following) {
-        this.username = username;
+    private Profile(UserName userName, String bio, Image image, boolean following) {
+        this.userName = userName;
         this.bio = bio;
         this.image = image;
         this.following = following;
     }
 
-    public Profile(String username) {
-        this(username, null, null, false);
+    public Profile(UserName userName) {
+        this(userName, null, null, false);
     }
 
-    public Profile(UpdateProfileModel model) {
-        this.username = model.getUsername();
-        this.bio = model.getBio();
-        this.image = model.getImage();
+    public void changeUserName(UserName userName) {
+        this.userName = userName;
     }
 
-    protected Profile() { }
+    public void changeBio(String bio) {
+        this.bio = bio;
+    }
 
+    public void changeImage(Image image) {
+        this.image = image;
+    }
 }

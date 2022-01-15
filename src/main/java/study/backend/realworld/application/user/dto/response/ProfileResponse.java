@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Getter;
 import study.backend.realworld.application.user.domain.Profile;
 
+import static java.lang.String.valueOf;
+
 @Getter
 @JsonRootName("profile")
 public class ProfileResponse {
@@ -20,9 +22,10 @@ public class ProfileResponse {
     }
 
     public static ProfileResponse of(Profile profile) {
-        return new ProfileResponse(profile.getUsername(),
+        return new ProfileResponse(
+                valueOf(profile.getUserName()),
                 profile.getBio(),
-                profile.getImage(),
+                valueOf(profile.getImage()),
                 profile.isFollowing());
     }
 }

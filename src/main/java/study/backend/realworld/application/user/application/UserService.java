@@ -3,7 +3,7 @@ package study.backend.realworld.application.user.application;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import study.backend.realworld.application.user.domain.Password;
-import study.backend.realworld.application.user.domain.UserEntity;
+import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.model.UpdateProfileModel;
 import study.backend.realworld.application.user.domain.model.UserLoginModel;
 import study.backend.realworld.application.user.domain.model.UserRegisterModel;
@@ -22,19 +22,19 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public UserEntity register(UserRegisterModel request) throws Exception {
+    public User register(UserRegisterModel request) throws Exception {
         if (!userRepository.findByEmail(request.getEmail()).isEmpty()) {
             throw new DuplicateEmailException("duplicate email");
         }
 
         Password encodedPassword = Password.of(request.getPassword(), passwordEncoder);
-        return userRepository.save(UserEntity.of(request.getEmail(),
+        return userRepository.save(User.of(request.getEmail(),
                 request.getUsername(),
                 encodedPassword));
     }
 
-    public UserEntity login(UserLoginModel request) throws Exception {
-        UserEntity user = userRepository.findByEmail(request.getEmail())
+    public User login(UserLoginModel request) throws Exception {
+        User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(UserNotFountException::new);
 
         if (!user.matchesPassword(request.getPassword(), passwordEncoder)) {
@@ -44,17 +44,17 @@ public class UserService {
         return user;
     }
 
-    public UserEntity find(UserEntity user) throws UserNotFountException {
+    public User find(User user) throws UserNotFountException {
         return userRepository.findById(user.getId())
                 .orElseThrow(UserNotFountException::new);
     }
 
-    public UserEntity updateProfile(UserEntity user, UpdateProfileModel request) throws Exception {
+    public User updateProfile(User user, UpdateProfileModel request) throws Exception {
         if (!userRepository.findByEmail(request.getEmail()).isEmpty()) {
             throw new DuplicateEmailException("duplicate email");
         }
 
-        UserEntity updateUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
+        User updateUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
         updateUser.changeEmail(request.getEmail());
         updateUser.changeName(request.getUsername());
         updateUser.changePassword(Password.of(request.getPassword(), passwordEncoder));
