@@ -33,4 +33,16 @@ public class ProfileEntity {
     public ProfileEntity(UserName userName) {
         this(userName, null, null, false);
     }
+
+    public void changeUserName(UserName userName) {
+        this.userName = userName;
+    }
+
+    public void changeBio(String bio) {
+        this.bio = bio;
+    }
+
+    public void changeImage(Image image) {
+        this.image = image;
+    }
 }

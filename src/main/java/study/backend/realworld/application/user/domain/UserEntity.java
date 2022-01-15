@@ -66,4 +66,29 @@ public class UserEntity {
     public boolean matchesPassword(String rawPassword, PasswordEncoder passwordEncoder) {
         return password.matchesPassword(rawPassword, passwordEncoder);
     }
+
+    public UserName getName() {
+        return profile.getUserName();
+    }
+
+    public String getBio() {
+        return profile.getBio();
+    }
+
+    public Image getImage() {
+        return profile.getImage();
+    }
+
+    public void changeEmail(Email email) {
+        this.email = email;
+    }
+
+    public void changePassword(Password password) {
+        this.password = password;
+    }
+
+    public void changeName(UserName userName) {
+        profile.changeUserName(userName);
+    }
+
 }

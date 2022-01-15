@@ -2,15 +2,15 @@ package study.backend.realworld.application.user.application;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import study.backend.realworld.application.user.domain.Profile;
-import study.backend.realworld.application.user.domain.User;
-import study.backend.realworld.application.user.repository.UserRepository;
-import study.backend.realworld.application.user.exception.DuplicateEmailException;
-import study.backend.realworld.application.user.exception.PasswordNotMatchedException;
-import study.backend.realworld.application.user.exception.UserNotFountException;
+import study.backend.realworld.application.user.domain.Password;
+import study.backend.realworld.application.user.domain.UserEntity;
 import study.backend.realworld.application.user.domain.model.UpdateProfileModel;
 import study.backend.realworld.application.user.domain.model.UserLoginModel;
 import study.backend.realworld.application.user.domain.model.UserRegisterModel;
+import study.backend.realworld.application.user.exception.DuplicateEmailException;
+import study.backend.realworld.application.user.exception.PasswordNotMatchedException;
+import study.backend.realworld.application.user.exception.UserNotFountException;
+import study.backend.realworld.application.user.repository.UserRepository;
 
 @Service
 public class UserService {
@@ -22,40 +22,42 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public User register(UserRegisterModel request) throws Exception {
+    public UserEntity register(UserRegisterModel request) throws Exception {
         if (!userRepository.findByEmail(request.getEmail()).isEmpty()) {
             throw new DuplicateEmailException("duplicate email");
         }
 
-        String encodedPassword = passwordEncoder.encode(request.getPassword());
-        return userRepository.save(User.of(request.getUsername(),
-                request.getEmail(),
+        Password encodedPassword = Password.of(request.getPassword(), passwordEncoder);
+        return userRepository.save(UserEntity.of(request.getEmail(),
+                request.getUsername(),
                 encodedPassword));
     }
 
-    public User login(UserLoginModel request) throws Exception {
-        User user = userRepository.findByEmail(request.getEmail())
+    public UserEntity login(UserLoginModel request) throws Exception {
+        UserEntity user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(UserNotFountException::new);
 
-        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+        if (!user.matchesPassword(request.getPassword(), passwordEncoder)) {
             throw new PasswordNotMatchedException();
         }
 
         return user;
     }
 
-    public User find(User user) throws UserNotFountException {
+    public UserEntity find(UserEntity user) throws UserNotFountException {
         return userRepository.findById(user.getId())
                 .orElseThrow(UserNotFountException::new);
     }
 
-    public User updateProfile(User user, UpdateProfileModel request) throws Exception {
+    public UserEntity updateProfile(UserEntity user, UpdateProfileModel request) throws Exception {
         if (!userRepository.findByEmail(request.getEmail()).isEmpty()) {
             throw new DuplicateEmailException("duplicate email");
         }
 
-        User updateUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
-        updateUser.updateProfile(request.getUsername(), new Profile(request), user.getPassword());
+        UserEntity updateUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
+        updateUser.changeEmail(request.getEmail());
+        updateUser.changeName(request.getUsername());
+        updateUser.changePassword(Password.of(request.getPassword(), passwordEncoder));
 
         return userRepository.saveAndFlush(updateUser);
 

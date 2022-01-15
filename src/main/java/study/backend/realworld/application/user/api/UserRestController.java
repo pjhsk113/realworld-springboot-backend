@@ -51,6 +51,8 @@ public class UserRestController {
                                                @RequestBody @Valid UpdateProfileRequest profile,
                                                @RequestHeader("Authorization") String authorization) throws Exception {
 
-        return ResponseEntity.ok(UserResponse.of(userService.updateProfile(user, profile.toUpdateProfileRequest()), authorization.split(" ")[1]));
+        return ResponseEntity.ok(
+                UserResponse.of(userService.updateProfile(user, profile.toUpdateProfileRequest()), authorization.split(" ")[1])
+        );
     }
 }
