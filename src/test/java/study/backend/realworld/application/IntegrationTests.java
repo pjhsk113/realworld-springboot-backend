@@ -7,7 +7,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
+import study.backend.realworld.application.user.domain.Email;
+import study.backend.realworld.application.user.domain.Password;
 import study.backend.realworld.application.user.domain.User;
+import study.backend.realworld.application.user.domain.UserName;
 import study.backend.realworld.application.user.repository.UserRepository;
 import study.backend.realworld.infra.security.jwt.TokenGenerator;
 
@@ -35,14 +38,19 @@ public abstract class IntegrationTests {
     private TokenGenerator tokenGenerator;
 
     protected String setUpToken;
+
     protected User setUpUser;
 
     @BeforeEach
     protected void setUp() {
         setUpUser = userRepository.save(
-                User.of("user@email.com", "user", passwordEncoder.encode("password"))
+                User.of(
+                        new Email("user@email.com"),
+                        new UserName("user"),
+                        Password.of("password", passwordEncoder)
+                )
         );
 
-        setUpToken = "Token " +tokenGenerator.generateToken(setUpUser.getEmail());
+        setUpToken = "Token " + tokenGenerator.generateToken(setUpUser.getEmail());
     }
 }

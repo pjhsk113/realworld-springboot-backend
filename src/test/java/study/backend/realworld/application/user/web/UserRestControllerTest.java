@@ -53,7 +53,7 @@ class UserRestControllerTest extends IntegrationTests {
         mockMvc.perform(post("/api/users/login")
                 .contentType(APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(requestDTO)))
-                .andExpect(status().isUnauthorized());
+                .andExpect(status().isBadRequest());
     }
 
     @Test

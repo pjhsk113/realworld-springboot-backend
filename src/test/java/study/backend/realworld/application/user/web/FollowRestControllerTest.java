@@ -17,7 +17,7 @@ class FollowRestControllerTest extends IntegrationTests {
     @BeforeEach
     protected void setUp(){
         super.setUp();
-        user = userRepository.save(User.of("test@email.com", "test", "password"));
+        user = super.setUpUser;
     }
 
     @Test
