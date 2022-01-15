@@ -29,7 +29,7 @@ public class UserService {
 
         Password encodedPassword = Password.of(request.getPassword(), passwordEncoder);
         return userRepository.save(User.of(request.getEmail(),
-                request.getUsername(),
+                request.getUserName(),
                 encodedPassword));
     }
 
@@ -56,7 +56,7 @@ public class UserService {
 
         User updateUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
         updateUser.changeEmail(request.getEmail());
-        updateUser.changeName(request.getUsername());
+        updateUser.changeName(request.getUserName());
         updateUser.changePassword(Password.of(request.getPassword(), passwordEncoder));
 
         return userRepository.saveAndFlush(updateUser);

@@ -6,12 +6,12 @@ import study.backend.realworld.application.user.domain.UserName;
 
 @Getter
 public class UserRegisterModel {
-    private final UserName username;
+    private final UserName userName;
     private final Email email;
     private final String password;
 
-    public UserRegisterModel(UserName username, Email email, String password) {
-        this.username = username;
+    public UserRegisterModel(UserName userName, Email email, String password) {
+        this.userName = userName;
         this.email = email;
         this.password = password;
     }

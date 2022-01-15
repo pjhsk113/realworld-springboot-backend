@@ -9,10 +9,12 @@ import javax.persistence.Embeddable;
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserName {
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "username", nullable = false)
+    private String userName;
 
-    public UserName(String name) {
-        this.name = name;
+    public UserName(String userName) {
+        this.userName = userName;
     }
+
+
 }

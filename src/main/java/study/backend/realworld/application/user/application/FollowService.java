@@ -10,21 +10,21 @@ import study.backend.realworld.application.user.repository.UserRepository;
 
 @Service
 public class FollowService {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public FollowService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     public Profile follow(User user, UserName userName) throws UserNotFountException, ExistsUserException {
-        User target = userRepository.findByProfileUsername(userName)
+        User target = userRepository.findByProfileUserName(userName)
                 .orElseThrow(UserNotFountException::new);
         user.follow(target);
         return new Profile(userName);
     }
 
     public Profile unfollow(User user, UserName userName) throws UserNotFountException {
-        User target = userRepository.findByProfileUsername(userName)
+        User target = userRepository.findByProfileUserName(userName)
                 .orElseThrow(UserNotFountException::new);
         user.unfollow(target);
         return new Profile(userName);

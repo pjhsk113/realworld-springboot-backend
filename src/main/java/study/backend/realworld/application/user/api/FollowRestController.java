@@ -19,21 +19,21 @@ public class FollowRestController {
 
     private final FollowService followService;
 
-    @PostMapping("/{username}/follow")
-    public ResponseEntity<ProfileResponse> following(@AuthenticationPrincipal User user, @PathVariable UserName username) throws ExistsUserException, UserNotFountException {
-        Profile profile = followService.follow(user, username);
+    @PostMapping("/{userName}/follow")
+    public ResponseEntity<ProfileResponse> following(@AuthenticationPrincipal User user, @PathVariable UserName userName) throws ExistsUserException, UserNotFountException {
+        Profile profile = followService.follow(user, userName);
 
         return ResponseEntity.ok(ProfileResponse.of(profile));
     }
 
-    @DeleteMapping("/{username}/follow")
-    public ResponseEntity<ProfileResponse> unFollow(@AuthenticationPrincipal User user, @PathVariable UserName username) throws UserNotFountException {
-        Profile profile = followService.unfollow(user, username);
+    @DeleteMapping("/{userName}/follow")
+    public ResponseEntity<ProfileResponse> unFollow(@AuthenticationPrincipal User user, @PathVariable UserName userName) throws UserNotFountException {
+        Profile profile = followService.unfollow(user, userName);
         return ResponseEntity.ok(ProfileResponse.of(profile));
     }
 
-    @GetMapping("/{username}")
-    public ResponseEntity<ProfileResponse> find(@AuthenticationPrincipal User user, @PathVariable UserName username) {
+    @GetMapping("/{userName}")
+    public ResponseEntity<ProfileResponse> find(@AuthenticationPrincipal User user, @PathVariable UserName userName) {
         return ResponseEntity.ok(null);
     }
 }
