@@ -22,7 +22,7 @@ class FollowRestControllerTest extends IntegrationTests {
 
     @Test
     void when_follow_success() throws Exception {
-        String username = "test";
+        String username = "user";
 
         mockMvc.perform(post("/api/profiles/" + username + "/follow")
                 .contentType(APPLICATION_JSON)
@@ -55,7 +55,7 @@ class FollowRestControllerTest extends IntegrationTests {
     @Test
     void when_unfollow_success() throws Exception {
         setUpUser.follow(user);
-        String username = "test";
+        String username = "user";
 
         mockMvc.perform(delete("/api/profiles/" + username + "/follow")
                 .contentType(APPLICATION_JSON)
