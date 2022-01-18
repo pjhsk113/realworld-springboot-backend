@@ -32,8 +32,8 @@ public class User {
 
     @OneToMany(cascade = CascadeType.REMOVE)
     @JoinTable(name = "user_follows",
-            joinColumns = @JoinColumn(name = "follower_id"),
-            inverseJoinColumns = @JoinColumn(name = "following_id"))
+            joinColumns = @JoinColumn(name = "follower_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "following_id", referencedColumnName = "id"))
     private Set<User> follows = new HashSet<>();
 
     private User(Email email, Profile profile, Password password) {
