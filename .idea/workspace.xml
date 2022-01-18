@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="refactor: package 변경">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/98d2c2f1-4f06-4132-b5c2-fad537341f86.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/98d2c2f1-4f06-4132-b5c2-fad537341f86.xml" afterDir="false" />
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="feat: UserEntity follow 기능 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +79,7 @@
       <recent name="study.backend.realworld.infra.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FollowRestControllerTest">
+  <component name="RunManager" selected="JUnit.EmailTest.when_same_address_expect_equal_and_hashCode">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -91,11 +91,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EmailTest.when_same_address_expect_equal_and_hashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.EmailTest" />
+      <option name="METHOD_NAME" value="when_same_address_expect_equal_and_hashCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FollowRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.api.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,27 +122,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FollowRestControllerTest.when_follow_fail_exist_user" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.FollowRestControllerTest" />
-      <option name="METHOD_NAME" value="when_follow_fail_exist_user" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FollowRestControllerTest.when_follow_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.api.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,27 +138,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FollowRestControllerTest.when_unfollow_fail_cause_user_not_found" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.FollowRestControllerTest" />
-      <option name="METHOD_NAME" value="when_unfollow_fail_cause_user_not_found" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FollowRestControllerTest.when_unfollow_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.api.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -166,6 +150,21 @@
       <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.FollowRestControllerTest" />
       <option name="METHOD_NAME" value="when_unfollow_success" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FollowRestControllerTest" />
+        <item itemvalue="JUnit.EmailTest.when_same_address_expect_equal_and_hashCode" />
         <item itemvalue="JUnit.FollowRestControllerTest.when_unfollow_success" />
-        <item itemvalue="JUnit.FollowRestControllerTest.when_unfollow_fail_cause_user_not_found" />
-        <item itemvalue="JUnit.FollowRestControllerTest.when_follow_fail_exist_user" />
+        <item itemvalue="JUnit.FollowRestControllerTest" />
         <item itemvalue="JUnit.FollowRestControllerTest.when_follow_success" />
+        <item itemvalue="JUnit.UserRestControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -210,98 +209,13 @@
       <workItem from="1632640318526" duration="4772000" />
       <workItem from="1637993442042" duration="1783000" />
       <workItem from="1641628338626" duration="885000" />
-      <workItem from="1641980410770" duration="1671000" />
-    </task>
-    <task id="LOCAL-00001" summary="feat: repository 변경">
-      <created>1627816463015</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1627816463015</updated>
-    </task>
-    <task id="LOCAL-00002" summary="feat: repository init">
-      <created>1627890549186</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1627890549186</updated>
-    </task>
-    <task id="LOCAL-00003" summary="feat: repository init">
-      <created>1627891599113</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1627891599113</updated>
-    </task>
-    <task id="LOCAL-00004" summary="feat: api 문서 추가">
-      <created>1628322682315</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1628322682315</updated>
-    </task>
-    <task id="LOCAL-00005" summary="feat: README 추가">
-      <created>1628322697583</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1628322697583</updated>
-    </task>
-    <task id="LOCAL-00006" summary="feat: properties 추가">
-      <created>1628325538356</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1628325538356</updated>
-    </task>
-    <task id="LOCAL-00007" summary="test: Controller Test">
-      <created>1628326325173</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1628326325173</updated>
-    </task>
-    <task id="LOCAL-00008" summary="feat: user 정보 조회 api 추가">
-      <created>1628326376983</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1628326376983</updated>
-    </task>
-    <task id="LOCAL-00009" summary="change: properties 파일 수정">
-      <created>1628331055084</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1628331055084</updated>
-    </task>
-    <task id="LOCAL-00010" summary="test: user find test 추가">
-      <created>1628331090184</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1628331090184</updated>
-    </task>
-    <task id="LOCAL-00011" summary="feat: User validate 단언문 추가">
-      <created>1629539160250</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1629539160250</updated>
-    </task>
-    <task id="LOCAL-00012" summary="refactor: 코드 import 정리">
-      <created>1629539206403</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1629539206403</updated>
-    </task>
-    <task id="LOCAL-00013" summary="test: TokenExtractor 테스트 추가">
-      <created>1629539255754</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1629539255754</updated>
+      <workItem from="1641980410770" duration="2040000" />
+      <workItem from="1642077594268" duration="538000" />
+      <workItem from="1642161148547" duration="3352000" />
+      <workItem from="1642224207300" duration="3912000" />
+      <workItem from="1642228142126" duration="1814000" />
+      <workItem from="1642303006480" duration="5254000" />
+      <workItem from="1642506463519" duration="1863000" />
     </task>
     <task id="LOCAL-00014" summary="refactor: 테스트용 추상클래스 추가&#10;&#10;- 기존 UserRestControllerTest에서 가지고 있던 의존성을 분리&#10;- 공통 테스트 데이터 추가">
       <created>1629539390073</created>
@@ -527,7 +441,126 @@
       <option name="project" value="LOCAL" />
       <updated>1637995923243</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="feat: 도메인 Entity 쪼개기!">
+      <created>1641986040705</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1641986040705</updated>
+    </task>
+    <task id="LOCAL-00047" summary="feat: User Entity 추가&#10;&#10;- Embedded를 최대한 활용해보자">
+      <created>1641986088556</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1641986088556</updated>
+    </task>
+    <task id="LOCAL-00048" summary="feat: Profile Entity 추가&#10;&#10;- Embedded를 최대한 활용해보자">
+      <created>1641986107207</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1641986107207</updated>
+    </task>
+    <task id="LOCAL-00049" summary="feat: UserEntity follow 기능 추가">
+      <created>1642078118661</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1642078118661</updated>
+    </task>
+    <task id="LOCAL-00050" summary="refactor: Model 필드 변경">
+      <created>1642164353032</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1642164353032</updated>
+    </task>
+    <task id="LOCAL-00051" summary="refactor: request 객체 변경">
+      <created>1642164387508</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1642164387508</updated>
+    </task>
+    <task id="LOCAL-00052" summary="refactor: 각 도메인에 필요한 생성자, 메서드 추가">
+      <created>1642164432979</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1642164432979</updated>
+    </task>
+    <task id="LOCAL-00053" summary="refactor: controller 매핑 객체 변경">
+      <created>1642164468261</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1642164468261</updated>
+    </task>
+    <task id="LOCAL-00054" summary="refactor: 타입 변경">
+      <created>1642164496034</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1642164496035</updated>
+    </task>
+    <task id="LOCAL-00055" summary="refactor: user 업데이트 로직 리팩터링&#10;&#10;- 타입 변환 로직 추가">
+      <created>1642225387749</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1642225387750</updated>
+    </task>
+    <task id="LOCAL-00056" summary="refactor: follow 기능 리팩터링&#10;&#10;- 클래스명 변경 UserEntity -&gt; User, ProfileEntity -&gt; Profile&#10;- 참조 클래스 변경 및 로직 수정">
+      <created>1642226445542</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1642226445542</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fix: UserName 매핑 실패 오류 수정">
+      <created>1642229679255</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1642229679255</updated>
+    </task>
+    <task id="LOCAL-00058" summary="test: 테스트 코드 추가">
+      <created>1642229706059</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1642229706059</updated>
+    </task>
+    <task id="LOCAL-00059" summary="test: Follow 테스트 코드 수정">
+      <created>1642306744140</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1642306744141</updated>
+    </task>
+    <task id="LOCAL-00060" summary="test: 테스트 코드 보강하기&#10;&#10;- displayName 추가">
+      <created>1642307879980</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1642307879980</updated>
+    </task>
+    <task id="LOCAL-00061" summary="test: Domain Test 추가 - Email&#10;&#10;- Email 객체의 동치성 검사 테스트 추가">
+      <created>1642308973538</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1642308973538</updated>
+    </task>
+    <task id="LOCAL-00062" summary="feat: Email equals and hashCode 추가">
+      <created>1642308997140</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1642308997140</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,23 +596,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="feat: custom exception 반환 status code 추가" />
-    <MESSAGE value="feat: user update정보 반환 메서드 추가" />
-    <MESSAGE value="feat: User Update 구현&#10;&#10;- custom exception 코드 추가" />
-    <MESSAGE value="test: User Controller Test 추가&#10;&#10;- User쪽 endpoint 마무리" />
-    <MESSAGE value="feat: Follow Controller 추가" />
-    <MESSAGE value="feat: Follow Controller endpoint 추가&#10;&#10;- unfollow, find 추가" />
-    <MESSAGE value="test: Follow Controller Test 추가&#10;&#10;- setUp 추가" />
-    <MESSAGE value="feat: user 별 follow 목록 추가" />
-    <MESSAGE value="feat: userName 검색 기능 추가" />
-    <MESSAGE value="feat: User Follow endPoint 추가" />
-    <MESSAGE value="feat: follow 기능 구현" />
-    <MESSAGE value="feat: custom Exception 추가&#10;&#10;- 이미 follow한 유저를 또 follow할 경우 발생" />
-    <MESSAGE value="feat: unfollow 기능 추가" />
-    <MESSAGE value="refactor: User password 컬럼 위치 변경" />
-    <MESSAGE value="fix: Profile의 username을 못찾던 문제 수정&#10;&#10;- Embedded의 이름을 명시해 username을 찾을 수 있도록 변경&#10;findByUsername -&gt; findByProfileUsername" />
-    <MESSAGE value="refactor: username 찾는 메서드명 변경" />
-    <MESSAGE value="refactor: 임포트 정리" />
     <MESSAGE value="feat: Exception Response statusCode 추가" />
     <MESSAGE value="fix: PathVariable 이름 오타 수정&#10;&#10;- userName -&gt; username으로 변경" />
     <MESSAGE value="test: FollowRestController - follow 관련 슬라이스 테스트" />
@@ -588,7 +604,25 @@
     <MESSAGE value="test: FollowRestController unfollow 기능 테스트" />
     <MESSAGE value="refactor: import 정리" />
     <MESSAGE value="refactor: package 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: package 변경" />
+    <MESSAGE value="feat: 도메인 Entity 쪼개기!" />
+    <MESSAGE value="feat: User Entity 추가&#10;&#10;- Embedded를 최대한 활용해보자" />
+    <MESSAGE value="feat: Profile Entity 추가&#10;&#10;- Embedded를 최대한 활용해보자" />
+    <MESSAGE value="feat: UserEntity follow 기능 추가" />
+    <MESSAGE value="refactor: Model 필드 변경" />
+    <MESSAGE value="refactor: request 객체 변경" />
+    <MESSAGE value="refactor: 각 도메인에 필요한 생성자, 메서드 추가" />
+    <MESSAGE value="refactor: controller 매핑 객체 변경" />
+    <MESSAGE value="refactor: 타입 변경" />
+    <MESSAGE value="refactor: user 업데이트 로직 리팩터링&#10;&#10;- 타입 변환 로직 추가" />
+    <MESSAGE value="refactor: follow 기능 리팩터링&#10;&#10;- 클래스명 변경 UserEntity -&gt; User, ProfileEntity -&gt; Profile&#10;- 참조 클래스 변경 및 로직 수정" />
+    <MESSAGE value="fix: UserName 매핑 실패 오류 수정" />
+    <MESSAGE value="test: 테스트 코드 추가" />
+    <MESSAGE value="test: Follow 테스트 코드 수정" />
+    <MESSAGE value="test: 테스트 코드 보강하기&#10;&#10;- displayName 추가" />
+    <MESSAGE value="test: Domain Test 추가 - Email&#10;&#10;- Email 객체의 동치성 검사 테스트 추가" />
+    <MESSAGE value="feat: Email equals and hashCode 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Email equals and hashCode 추가" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -605,12 +639,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/JwtTokenFilter.java</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/JwtTokenFilter.java</url>
-          <line>37</line>
+          <line>38</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
