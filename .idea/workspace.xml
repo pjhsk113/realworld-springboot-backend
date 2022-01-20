@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="feat: UserEntity follow 기능 추가">
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="feat: Article 도메인 객체 추가 - 미완">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/domain/ArticleContents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/domain/ArticleContents.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,84 +215,9 @@
       <workItem from="1642224207300" duration="3912000" />
       <workItem from="1642228142126" duration="1814000" />
       <workItem from="1642303006480" duration="5254000" />
-      <workItem from="1642506463519" duration="1863000" />
-    </task>
-    <task id="LOCAL-00014" summary="refactor: 테스트용 추상클래스 추가&#10;&#10;- 기존 UserRestControllerTest에서 가지고 있던 의존성을 분리&#10;- 공통 테스트 데이터 추가">
-      <created>1629539390073</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1629539390073</updated>
-    </task>
-    <task id="LOCAL-00015" summary="test: UserRestControllerTest 테스트 코드 수정&#10;&#10;- 테스트용 추상클래스 상속받도록 변경">
-      <created>1629539531879</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1629539531879</updated>
-    </task>
-    <task id="LOCAL-00016" summary="feat: user Profile update endPoint 추가">
-      <created>1629539992720</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1629539992720</updated>
-    </task>
-    <task id="LOCAL-00017" summary="feat: custom exception 추가">
-      <created>1629541900381</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1629541900381</updated>
-    </task>
-    <task id="LOCAL-00018" summary="feat: custom exception 추가">
-      <created>1629618286414</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1629618286414</updated>
-    </task>
-    <task id="LOCAL-00019" summary="feat: gitignore 추가">
-      <created>1629618307231</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1629618307231</updated>
-    </task>
-    <task id="LOCAL-00020" summary="feat: update user endPoint 추가&#10;&#10;- 실패 시 exception status 코드 추가">
-      <created>1629618404882</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1629618404882</updated>
-    </task>
-    <task id="LOCAL-00021" summary="feat: custom exception 반환 status code 추가">
-      <created>1629618433153</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1629618433153</updated>
-    </task>
-    <task id="LOCAL-00022" summary="feat: user update정보 반환 메서드 추가">
-      <created>1629618507416</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1629618507416</updated>
-    </task>
-    <task id="LOCAL-00023" summary="feat: User Update 구현&#10;&#10;- custom exception 코드 추가">
-      <created>1629618542243</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1629618542243</updated>
-    </task>
-    <task id="LOCAL-00024" summary="test: User Controller Test 추가&#10;&#10;- User쪽 endpoint 마무리">
-      <created>1629618584401</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1629618584401</updated>
+      <workItem from="1642506463519" duration="1954000" />
+      <workItem from="1642572153957" duration="4993000" />
+      <workItem from="1642655648794" duration="5391000" />
     </task>
     <task id="LOCAL-00025" summary="feat: Follow Controller 추가">
       <created>1630748121265</created>
@@ -560,7 +485,84 @@
       <option name="project" value="LOCAL" />
       <updated>1642308997140</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="feat: User - follows rferencedColumnName 추가">
+      <created>1642512744842</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1642512744843</updated>
+    </task>
+    <task id="LOCAL-00064" summary="feat: Article 도메인 객체 추가 - 미완">
+      <created>1642512769141</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1642512769141</updated>
+    </task>
+    <task id="LOCAL-00065" summary="feat: ArticleTitle 추가">
+      <created>1642575943202</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1642575943202</updated>
+    </task>
+    <task id="LOCAL-00066" summary="feat: Tag 추가">
+      <created>1642575969415</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1642575969415</updated>
+    </task>
+    <task id="LOCAL-00067" summary="feat: ArticleContents 추가">
+      <created>1642576044679</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1642576044679</updated>
+    </task>
+    <task id="LOCAL-00068" summary="feat: JPA Auditing 설정 추가">
+      <created>1642576097009</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1642576097009</updated>
+    </task>
+    <task id="LOCAL-00069" summary="feat: Article 세부 항목 추가(TODO Comment)&#10;&#10;- 연과 관계 설정&#10;- JPA Auditing 추가&#10;- favorite 기능 추가">
+      <created>1642576235355</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1642576235355</updated>
+    </task>
+    <task id="LOCAL-00070" summary="refactor: JPA Auditing 기능 분리&#10;&#10;- BaseTime을 상속하도록 변경">
+      <created>1642656520479</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1642656520480</updated>
+    </task>
+    <task id="LOCAL-00071" summary="feat: Equals And HashCode 추가">
+      <created>1642656950223</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1642656950223</updated>
+    </task>
+    <task id="LOCAL-00072" summary="feat: Comment 객체 추가">
+      <created>1642657125360</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1642657125360</updated>
+    </task>
+    <task id="LOCAL-00073" summary="feat: Article comment 연관관계 설정">
+      <created>1642657139417</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1642657139417</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,17 +598,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="feat: Exception Response statusCode 추가" />
-    <MESSAGE value="fix: PathVariable 이름 오타 수정&#10;&#10;- userName -&gt; username으로 변경" />
-    <MESSAGE value="test: FollowRestController - follow 관련 슬라이스 테스트" />
-    <MESSAGE value="change: FollowRestController unFollow endPoint 변경" />
-    <MESSAGE value="change: UserNotFountException ResponseStatus 변경&#10;&#10;- 401 -&gt; 400" />
-    <MESSAGE value="test: FollowRestController unfollow 기능 테스트" />
-    <MESSAGE value="refactor: import 정리" />
-    <MESSAGE value="refactor: package 변경" />
-    <MESSAGE value="feat: 도메인 Entity 쪼개기!" />
-    <MESSAGE value="feat: User Entity 추가&#10;&#10;- Embedded를 최대한 활용해보자" />
-    <MESSAGE value="feat: Profile Entity 추가&#10;&#10;- Embedded를 최대한 활용해보자" />
     <MESSAGE value="feat: UserEntity follow 기능 추가" />
     <MESSAGE value="refactor: Model 필드 변경" />
     <MESSAGE value="refactor: request 객체 변경" />
@@ -621,7 +612,18 @@
     <MESSAGE value="test: 테스트 코드 보강하기&#10;&#10;- displayName 추가" />
     <MESSAGE value="test: Domain Test 추가 - Email&#10;&#10;- Email 객체의 동치성 검사 테스트 추가" />
     <MESSAGE value="feat: Email equals and hashCode 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Email equals and hashCode 추가" />
+    <MESSAGE value="feat: User - follows rferencedColumnName 추가" />
+    <MESSAGE value="feat: Article 도메인 객체 추가 - 미완" />
+    <MESSAGE value="feat: ArticleTitle 추가" />
+    <MESSAGE value="feat: Tag 추가" />
+    <MESSAGE value="feat: ArticleContents 추가" />
+    <MESSAGE value="feat: JPA Auditing 설정 추가" />
+    <MESSAGE value="feat: Article 세부 항목 추가(TODO Comment)&#10;&#10;- 연과 관계 설정&#10;- JPA Auditing 추가&#10;- favorite 기능 추가" />
+    <MESSAGE value="refactor: JPA Auditing 기능 분리&#10;&#10;- BaseTime을 상속하도록 변경" />
+    <MESSAGE value="feat: Equals And HashCode 추가" />
+    <MESSAGE value="feat: Comment 객체 추가" />
+    <MESSAGE value="feat: Article comment 연관관계 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Article comment 연관관계 설정" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
