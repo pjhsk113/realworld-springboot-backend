@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -35,4 +36,9 @@ public class ArticleContents {
         this.tags = tags;
     }
 
+    public Set<String> tagToString() {
+        return tags.stream()
+                .map(Tag::toString)
+                .collect(Collectors.toSet());
+    }
 }
