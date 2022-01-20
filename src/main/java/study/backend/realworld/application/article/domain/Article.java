@@ -35,7 +35,8 @@ public class Article extends BaseTime {
 
     private boolean favorited = false;
 
-    // TODO Comments
+    @OneToMany(mappedBy = "article", cascade = { CascadeType.PERSIST, CascadeType.REMOVE})
+    private Set<Comment> comments = new HashSet<>();
 
     public Article(User author, ArticleContents contents) {
         this.author = author;
