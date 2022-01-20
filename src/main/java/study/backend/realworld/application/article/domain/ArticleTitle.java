@@ -1,12 +1,17 @@
 package study.backend.realworld.application.article.domain;
 
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@EqualsAndHashCode
 public class ArticleTitle {
     @Column(nullable = false)
     private String title;
@@ -18,8 +23,6 @@ public class ArticleTitle {
         this.title = title;
         this.slug = slug;
     }
-
-    protected ArticleTitle() { }
 
     public static ArticleTitle of(String title) {
         return new ArticleTitle(title, titleToSlug(title));

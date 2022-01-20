@@ -1,6 +1,7 @@
 package study.backend.realworld.application.article.domain;
 
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import study.backend.realworld.application.user.domain.User;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EqualsAndHashCode
 public class Article extends BaseTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
