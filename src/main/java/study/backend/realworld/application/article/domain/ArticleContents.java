@@ -41,4 +41,8 @@ public class ArticleContents {
                 .map(Tag::toString)
                 .collect(Collectors.toSet());
     }
+
+    public void refreshTags(Set<Tag> tags) {
+        this.tags = tags;
+    }
 }
