@@ -8,7 +8,7 @@ import study.backend.realworld.application.user.dto.response.ProfileResponse;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-public class PostArticleResponse {
+public class ArticleResponse {
     private String slug;
     private String title;
     private String description;
@@ -20,7 +20,7 @@ public class PostArticleResponse {
     private int favoritesCount;
     private ProfileResponse author;
 
-    private PostArticleResponse(String slug, String title, String description, String body, Set<String> tagList, LocalDateTime createdAt, LocalDateTime updatedAt, boolean favorited, int favoritesCount, ProfileResponse author) {
+    private ArticleResponse(String slug, String title, String description, String body, Set<String> tagList, LocalDateTime createdAt, LocalDateTime updatedAt, boolean favorited, int favoritesCount, ProfileResponse author) {
         this.slug = slug;
         this.title = title;
         this.description = description;
@@ -33,11 +33,11 @@ public class PostArticleResponse {
         this.author = author;
     }
 
-    public static PostArticleResponse of(Article article) {
+    public static ArticleResponse of(Article article) {
         final ArticleContents contents = article.getContents();
         final ArticleTitle titles = contents.getTitle();
 
-        return new PostArticleResponse(
+        return new ArticleResponse(
                 titles.getSlug(),
                 titles.getTitle(),
                 contents.getDescription(),
