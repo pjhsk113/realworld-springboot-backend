@@ -10,6 +10,7 @@ import study.backend.realworld.application.article.dto.request.PostArticleReques
 import study.backend.realworld.application.article.dto.response.ArticleResponse;
 import study.backend.realworld.application.article.dto.response.MultipleArticlesResponse;
 import study.backend.realworld.application.user.domain.User;
+import study.backend.realworld.application.user.exception.UserNotFountException;
 
 import javax.validation.Valid;
 
@@ -22,7 +23,7 @@ public class ArticleRestController {
 
     @PostMapping("/articles")
     public ResponseEntity<ArticleResponse> postArticle(@AuthenticationPrincipal User user,
-                                                       @Valid @RequestBody PostArticleRequest request) {
+                                                       @Valid @RequestBody PostArticleRequest request) throws UserNotFountException {
 
         return ResponseEntity.ok(
                 ArticleResponse.of(articleService.createArticle(user, request.toArticleContents()))

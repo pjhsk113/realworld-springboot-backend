@@ -10,9 +10,9 @@ import study.backend.realworld.application.article.domain.Tag;
 import study.backend.realworld.application.article.repository.ArticleRepository;
 import study.backend.realworld.application.article.repository.TagRepository;
 import study.backend.realworld.application.user.domain.User;
+import study.backend.realworld.application.user.exception.UserNotFountException;
 import study.backend.realworld.application.user.repository.UserRepository;
 
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -25,7 +25,7 @@ public class ArticleService {
     private final TagRepository tagRepository;
     private final UserRepository userRepository;
 
-    public Article createArticle(User user, ArticleContents contents) {
+    public Article createArticle(User user, ArticleContents contents) throws UserNotFountException {
         // 태그 정보 갱신
         Set<Tag> refreshTags = contents.getTags().stream()
                 .map(tag -> tagRepository.findFirstByValue(String.valueOf(tag))
@@ -35,11 +35,13 @@ public class ArticleService {
         contents.refreshTags(refreshTags);
 
         // user 정보 찾기
-        Optional<User> findUser = userRepository.findById(user.getId());
+        User findUser = userRepository.findById(user.getId())
+                .orElseThrow(UserNotFountException::new);
 
         // 찾은 user 정보를 article author에 매핑하기
-
+        Article newArticle = new Article(findUser, contents);
         // 저장
+        return articleRepository.save(newArticle);
     }
 
     public Page<Article> findArticleByTag(String tagName, Pageable pageable) {
