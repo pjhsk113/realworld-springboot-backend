@@ -31,6 +31,13 @@ public class ArticleRestController {
     }
 
     @GetMapping("/articles")
+    public ResponseEntity<?> getArticles(Pageable pageable) {
+        return ResponseEntity.ok(
+                MultipleArticlesResponse.from(articleService.findAllArticles(pageable))
+        );
+    }
+
+    @GetMapping(value = "/articles", params = { "tag" })
     public ResponseEntity<?> getArticlesByTag(@RequestParam String tag, Pageable pageable) {
         return ResponseEntity.ok(
                 MultipleArticlesResponse.from(articleService.findArticleByTag(tag, pageable))
