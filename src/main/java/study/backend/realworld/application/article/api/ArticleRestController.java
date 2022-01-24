@@ -43,4 +43,11 @@ public class ArticleRestController {
                 MultipleArticlesResponse.from(articleService.findArticleByTag(tag, pageable))
         );
     }
+
+    @GetMapping(value = "/articles", params = { "author" })
+    public ResponseEntity<?> getArticlesByAuthor(@RequestParam String author, Pageable pageable) {
+        return ResponseEntity.ok(
+                MultipleArticlesResponse.from(articleService.findArticleByAuthor(author, pageable))
+        );
+    }
 }

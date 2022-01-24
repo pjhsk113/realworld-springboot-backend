@@ -10,6 +10,7 @@ import study.backend.realworld.application.article.domain.Tag;
 import study.backend.realworld.application.article.repository.ArticleRepository;
 import study.backend.realworld.application.article.repository.TagRepository;
 import study.backend.realworld.application.user.domain.User;
+import study.backend.realworld.application.user.domain.UserName;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 import study.backend.realworld.application.user.repository.UserRepository;
 
@@ -52,5 +53,10 @@ public class ArticleService {
         return tagRepository.findFirstByValue(tagName)
                 .map(tag -> articleRepository.findAllByContentsTags(tag, pageable))
                 .orElse(Page.empty());
+    }
+
+    public Page<Article> findArticleByAuthor(String author, Pageable pageable) {
+        UserName userName = new UserName(author);
+        return articleRepository.findAllByAuthorProfileUserName(userName, pageable);
     }
 }
