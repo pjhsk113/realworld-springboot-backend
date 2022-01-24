@@ -10,6 +10,7 @@ import study.backend.realworld.application.article.dto.request.PostArticleReques
 import study.backend.realworld.application.article.dto.response.ArticleResponse;
 import study.backend.realworld.application.article.dto.response.MultipleArticlesResponse;
 import study.backend.realworld.application.user.domain.User;
+import study.backend.realworld.application.user.domain.UserName;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 
 import javax.validation.Valid;
@@ -48,6 +49,13 @@ public class ArticleRestController {
     public ResponseEntity<?> getArticlesByAuthor(@RequestParam String author, Pageable pageable) {
         return ResponseEntity.ok(
                 MultipleArticlesResponse.from(articleService.findArticleByAuthor(author, pageable))
+        );
+    }
+
+    @GetMapping(value = "/articles", params = { "favorited" })
+    public ResponseEntity<?> getArticlesByFavoritedUser(@RequestParam UserName userName, Pageable pageable) throws UserNotFountException {
+        return ResponseEntity.ok(
+                MultipleArticlesResponse.from(articleService.findArticleFavoritedByUserName(userName, pageable))
         );
     }
 }

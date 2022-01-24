@@ -46,4 +46,9 @@ public class Article extends BaseTime {
     public int getFavoritedCount() {
         return userFavorited.size();
     }
+
+    public Article updateFavoritedUser(User user) {
+        this.favorited = userFavorited.contains(user);
+        return this;
+    }
 }
