@@ -44,6 +44,10 @@ public class ArticleService {
         return articleRepository.save(newArticle);
     }
 
+    public Page<Article> findAllArticles(Pageable pageable) {
+        return articleRepository.findAll(pageable);
+    }
+
     public Page<Article> findArticleByTag(String tagName, Pageable pageable) {
         return tagRepository.findFirstByValue(tagName)
                 .map(tag -> articleRepository.findAllByContentsTags(tag, pageable))
