@@ -67,4 +67,17 @@ public class ArticleService {
         return articleRepository.findAllByUserFavoritedContains(user, pageable)
                 .map(article -> article.updateFavoritedUser(user));
     }
+
+    public Page<Article> findArticleFeedByUserName(User user, Pageable pageable) throws UserNotFountException {
+        User findUser = userRepository.findById(user.getId())
+                .orElseThrow(UserNotFountException::new);
+
+        return articleRepository.findAllByUserFavoritedContains(findUser, pageable)
+                .map(article -> article.updateFavoritedUser(user));
+    }
+
+    public Article findArticleBySlug(String slug) {
+        return articleRepository.findArticleByContentsTitleSlug(slug);
+    }
+
 }
