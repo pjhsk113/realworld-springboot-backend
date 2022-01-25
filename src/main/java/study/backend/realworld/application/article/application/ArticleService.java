@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import study.backend.realworld.application.article.domain.Article;
 import study.backend.realworld.application.article.domain.ArticleContents;
 import study.backend.realworld.application.article.domain.Tag;
+import study.backend.realworld.application.article.domain.model.ArticleUpdateModel;
 import study.backend.realworld.application.article.repository.ArticleRepository;
 import study.backend.realworld.application.article.repository.TagRepository;
 import study.backend.realworld.application.user.domain.User;
@@ -14,6 +15,7 @@ import study.backend.realworld.application.user.domain.UserName;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 import study.backend.realworld.application.user.repository.UserRepository;
 
+import javax.security.sasl.AuthenticationException;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -78,6 +80,11 @@ public class ArticleService {
 
     public Article findArticleBySlug(String slug) {
         return articleRepository.findArticleByContentsTitleSlug(slug);
+    }
+
+    public Article updateArticle(User user, String slug, ArticleUpdateModel request) throws UserNotFountException, AuthenticationException {
+        User findUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
+        return findUser.updateArticle(findArticleBySlug(slug), request);
     }
 
 }

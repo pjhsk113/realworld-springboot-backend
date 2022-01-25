@@ -7,12 +7,14 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import study.backend.realworld.application.article.application.ArticleService;
 import study.backend.realworld.application.article.dto.request.ArticlePostRequest;
+import study.backend.realworld.application.article.dto.request.ArticleUpdateRequest;
 import study.backend.realworld.application.article.dto.response.ArticleResponse;
 import study.backend.realworld.application.article.dto.response.MultipleArticlesResponse;
 import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.UserName;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 
+import javax.security.sasl.AuthenticationException;
 import javax.validation.Valid;
 
 @RestController
@@ -66,10 +68,18 @@ public class ArticleRestController {
     }
 
     @GetMapping("/articles/{slug}")
-    public ResponseEntity<ArticleResponse> getArticleBySlug(@PathVariable String slug) throws UserNotFountException {
+    public ResponseEntity<ArticleResponse> getArticleBySlug(@PathVariable String slug) {
         return ResponseEntity.ok(
                 ArticleResponse.from(articleService.findArticleBySlug(slug))
         );
     }
 
+    @PutMapping("/articles/{slug}")
+    public ResponseEntity<ArticleResponse> updateArticleBySlug(@AuthenticationPrincipal User user,
+                                                               @PathVariable String slug,
+                                                               @RequestBody ArticleUpdateRequest request) throws UserNotFountException, AuthenticationException {
+        return ResponseEntity.ok(
+                ArticleResponse.from(articleService.updateArticle(user, slug, request.toUpdateArticleModel()))
+        );
+    }
 }
