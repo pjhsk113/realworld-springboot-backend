@@ -12,7 +12,7 @@ import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
-public class PostArticleRequest {
+public class ArticlePostRequest {
     @NotBlank
     String title;
 
