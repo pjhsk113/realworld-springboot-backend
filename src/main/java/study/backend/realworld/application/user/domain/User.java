@@ -2,13 +2,17 @@ package study.backend.realworld.application.user.domain;
 
 import io.jsonwebtoken.lang.Assert;
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import study.backend.realworld.application.article.domain.Article;
+import study.backend.realworld.application.article.domain.model.ArticleUpdateModel;
 import study.backend.realworld.application.user.exception.ExistsUserException;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 
 import javax.persistence.*;
+import javax.security.sasl.AuthenticationException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,6 +20,7 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
+@EqualsAndHashCode
 public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -92,4 +97,11 @@ public class User {
         profile.changeUserName(userName);
     }
 
+    public Article updateArticle(Article article, ArticleUpdateModel request) throws AuthenticationException {
+        if (article.getAuthor() != this) {
+            throw new AuthenticationException("You are not authorized to update this article");
+        }
+        article.updateArticle(request);
+        return article;
+    }
 }

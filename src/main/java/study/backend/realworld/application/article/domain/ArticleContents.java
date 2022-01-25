@@ -3,6 +3,7 @@ package study.backend.realworld.application.article.domain;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import study.backend.realworld.application.article.domain.model.ArticleUpdateModel;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -44,5 +45,19 @@ public class ArticleContents {
 
     public void refreshTags(Set<Tag> tags) {
         this.tags = tags;
+    }
+
+    public void updateArticleContents(ArticleUpdateModel updateModel) {
+        if (updateModel.getTitle() != null) {
+            title =  updateModel.getTitle();
+        }
+
+        if (updateModel.getDescription() != null) {
+            description =  updateModel.getDescription();
+        }
+
+        if (updateModel.getBody() != null) {
+            body =  updateModel.getBody();
+        }
     }
 }

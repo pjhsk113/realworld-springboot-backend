@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import study.backend.realworld.application.article.domain.model.ArticleUpdateModel;
 import study.backend.realworld.application.user.domain.User;
 
 import javax.persistence.*;
@@ -50,5 +51,9 @@ public class Article extends BaseTime {
     public Article updateFavoritedUser(User user) {
         this.favorited = userFavorited.contains(user);
         return this;
+    }
+
+    public void updateArticle(ArticleUpdateModel updateModel) {
+        contents.updateArticleContents(updateModel);
     }
 }
