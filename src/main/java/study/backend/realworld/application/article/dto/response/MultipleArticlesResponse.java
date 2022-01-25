@@ -21,7 +21,7 @@ public class MultipleArticlesResponse {
     }
 
     private static List<ArticleResponse> articlesToList(Page<Article> articles) {
-        return articles.map(ArticleResponse::of)
+        return articles.map(ArticleResponse::from)
                 .stream()
                 .collect(Collectors.toList());
     }

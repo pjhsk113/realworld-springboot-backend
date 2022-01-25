@@ -33,7 +33,7 @@ public class ArticleResponse {
         this.author = author;
     }
 
-    public static ArticleResponse of(Article article) {
+    public static ArticleResponse from(Article article) {
         final ArticleContents contents = article.getContents();
         final ArticleTitle titles = contents.getTitle();
 
