@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import study.backend.realworld.application.article.application.ArticleService;
-import study.backend.realworld.application.article.dto.request.PostArticleRequest;
+import study.backend.realworld.application.article.dto.request.ArticlePostRequest;
 import study.backend.realworld.application.article.dto.response.ArticleResponse;
 import study.backend.realworld.application.article.dto.response.MultipleArticlesResponse;
 import study.backend.realworld.application.user.domain.User;
@@ -24,38 +24,52 @@ public class ArticleRestController {
 
     @PostMapping("/articles")
     public ResponseEntity<ArticleResponse> postArticle(@AuthenticationPrincipal User user,
-                                                       @Valid @RequestBody PostArticleRequest request) throws UserNotFountException {
-
+                                                       @Valid @RequestBody ArticlePostRequest request) throws UserNotFountException {
         return ResponseEntity.ok(
-                ArticleResponse.of(articleService.createArticle(user, request.toArticleContents()))
+                ArticleResponse.from(articleService.createArticle(user, request.toArticleContents()))
         );
     }
 
     @GetMapping("/articles")
-    public ResponseEntity<?> getArticles(Pageable pageable) {
+    public ResponseEntity<MultipleArticlesResponse> getArticles(Pageable pageable) {
         return ResponseEntity.ok(
                 MultipleArticlesResponse.from(articleService.findAllArticles(pageable))
         );
     }
 
     @GetMapping(value = "/articles", params = { "tag" })
-    public ResponseEntity<?> getArticlesByTag(@RequestParam String tag, Pageable pageable) {
+    public ResponseEntity<MultipleArticlesResponse> getArticlesByTag(@RequestParam String tag, Pageable pageable) {
         return ResponseEntity.ok(
                 MultipleArticlesResponse.from(articleService.findArticleByTag(tag, pageable))
         );
     }
 
     @GetMapping(value = "/articles", params = { "author" })
-    public ResponseEntity<?> getArticlesByAuthor(@RequestParam String author, Pageable pageable) {
+    public ResponseEntity<MultipleArticlesResponse> getArticlesByAuthor(@RequestParam String author, Pageable pageable) {
         return ResponseEntity.ok(
                 MultipleArticlesResponse.from(articleService.findArticleByAuthor(author, pageable))
         );
     }
 
     @GetMapping(value = "/articles", params = { "favorited" })
-    public ResponseEntity<?> getArticlesByFavoritedUser(@RequestParam UserName userName, Pageable pageable) throws UserNotFountException {
+    public ResponseEntity<MultipleArticlesResponse> getArticlesByFavoritedUser(@RequestParam UserName userName, Pageable pageable) throws UserNotFountException {
         return ResponseEntity.ok(
                 MultipleArticlesResponse.from(articleService.findArticleFavoritedByUserName(userName, pageable))
         );
     }
+
+    @GetMapping("/articles/feed")
+    public ResponseEntity<MultipleArticlesResponse> getArticlesFeed(@AuthenticationPrincipal User user, Pageable pageable) throws UserNotFountException {
+        return ResponseEntity.ok(
+                MultipleArticlesResponse.from(articleService.findArticleFeedByUserName(user, pageable))
+        );
+    }
+
+    @GetMapping("/articles/{slug}")
+    public ResponseEntity<ArticleResponse> getArticleBySlug(@PathVariable String slug) throws UserNotFountException {
+        return ResponseEntity.ok(
+                ArticleResponse.from(articleService.findArticleBySlug(slug))
+        );
+    }
+
 }
