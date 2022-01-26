@@ -66,4 +66,10 @@ public class Article extends BaseTime {
         userFavorited.remove(user);
         return updateFavoritedUser(user);
     }
+
+    public Comment addComment(User author, String body) {
+        Comment brandNewComment = new Comment(this, author, body);
+        comments.add(brandNewComment);
+        return brandNewComment;
+    }
 }

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import study.backend.realworld.application.article.domain.Article;
+import study.backend.realworld.application.article.domain.Comment;
 import study.backend.realworld.application.article.domain.model.ArticleUpdateModel;
 import study.backend.realworld.application.user.exception.ExistsUserException;
 import study.backend.realworld.application.user.exception.UserNotFountException;
@@ -116,5 +117,9 @@ public class User {
     public Article unfavoriteArticle(Article article) {
         articleFavorited.remove(article);
         return article.removeUserUnFavoriteArticle(this);
+    }
+
+    public Comment addCommentToArticle(Article article, String body) {
+        return article.addComment(this, body);
     }
 }
