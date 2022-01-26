@@ -87,4 +87,15 @@ public class ArticleService {
         return findUser.updateArticle(findArticleBySlug(slug), request);
     }
 
+    public Article favoriteArticle(User user, String slug) throws UserNotFountException {
+        User findUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
+        Article findArticle = findArticleBySlug(slug);
+        return findUser.favoriteArticle(findArticle);
+    }
+
+    public Article unfavoriteArticle(User user, String slug) throws UserNotFountException {
+        User findUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
+        Article findArticle = findArticleBySlug(slug);
+        return findUser.unfavoriteArticle(findArticle);
+    }
 }

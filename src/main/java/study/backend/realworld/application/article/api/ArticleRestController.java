@@ -82,4 +82,21 @@ public class ArticleRestController {
                 ArticleResponse.from(articleService.updateArticle(user, slug, request.toUpdateArticleModel()))
         );
     }
+
+    @PostMapping("/articles/{slug}/favorite")
+    public ResponseEntity<ArticleResponse> favoriteArticleBySlug(@AuthenticationPrincipal User user,
+                                                                 @PathVariable String slug) throws UserNotFountException {
+
+        return ResponseEntity.ok(
+                ArticleResponse.from(articleService.favoriteArticle(user, slug))
+        );
+    }
+
+    @DeleteMapping("/articles/{slug}/favorite")
+    public ResponseEntity<ArticleResponse> unfavoriteArticleBySlug(@AuthenticationPrincipal User user,
+                                                                   @PathVariable String slug) throws UserNotFountException {
+        return ResponseEntity.ok(
+                ArticleResponse.from(articleService.unfavoriteArticle(user, slug))
+        );
+    }
 }

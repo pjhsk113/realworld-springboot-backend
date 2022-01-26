@@ -41,6 +41,9 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "following_id", referencedColumnName = "id"))
     private Set<User> follows = new HashSet<>();
 
+    @ManyToMany(mappedBy = "userFavorited")
+    private Set<Article> articleFavorited = new HashSet<>();
+
     private User(Email email, Profile profile, Password password) {
         this.email = email;
         this.profile = profile;
@@ -103,5 +106,15 @@ public class User {
         }
         article.updateArticle(request);
         return article;
+    }
+
+    public Article favoriteArticle(Article article) {
+        articleFavorited.add(article);
+        return article.addUserFavoriteArticle(this);
+    }
+
+    public Article unfavoriteArticle(Article article) {
+        articleFavorited.remove(article);
+        return article.removeUserUnFavoriteArticle(this);
     }
 }

@@ -56,4 +56,14 @@ public class Article extends BaseTime {
     public void updateArticle(ArticleUpdateModel updateModel) {
         contents.updateArticleContents(updateModel);
     }
+
+    public Article addUserFavoriteArticle(User user) {
+        userFavorited.add(user);
+        return updateFavoritedUser(user);
+    }
+
+    public Article removeUserUnFavoriteArticle(User user) {
+        userFavorited.remove(user);
+        return updateFavoritedUser(user);
+    }
 }
