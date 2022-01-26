@@ -87,6 +87,12 @@ public class ArticleService {
         return findUser.updateArticle(findArticleBySlug(slug), request);
     }
 
+
+    public void deleteArticleBySlug(User user, String slug) throws UserNotFountException {
+        User findUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
+        articleRepository.deleteArticleByAuthorAndContentsTitleSlug(findUser, slug);
+    }
+
     public Article favoriteArticle(User user, String slug) throws UserNotFountException {
         User findUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
         Article findArticle = findArticleBySlug(slug);

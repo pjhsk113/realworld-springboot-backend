@@ -83,6 +83,12 @@ public class ArticleRestController {
         );
     }
 
+    @DeleteMapping("/articles/{slug}")
+    public void deleteArticleBySlug(@AuthenticationPrincipal User user,
+                                                    @PathVariable String slug) throws UserNotFountException {
+        articleService.deleteArticleBySlug(user, slug);
+    }
+
     @PostMapping("/articles/{slug}/favorite")
     public ResponseEntity<ArticleResponse> favoriteArticleBySlug(@AuthenticationPrincipal User user,
                                                                  @PathVariable String slug) throws UserNotFountException {
