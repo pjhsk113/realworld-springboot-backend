@@ -124,6 +124,10 @@ public class User {
         return article.addComment(this, body);
     }
 
+    public void deleteArticleComment(Article article, long commentId) throws AuthenticationException {
+        article.removeComment(this, commentId);
+    }
+
     public Set<Comment> getArticleComments(Article article) {
         return article.getComments().stream()
                 .map(this::getComment)

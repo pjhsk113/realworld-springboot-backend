@@ -8,7 +8,9 @@ import study.backend.realworld.application.article.domain.model.ArticleUpdateMod
 import study.backend.realworld.application.user.domain.User;
 
 import javax.persistence.*;
+import javax.security.sasl.AuthenticationException;
 import java.util.HashSet;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 @Table(name = "articles")
@@ -71,5 +73,21 @@ public class Article extends BaseTime {
         Comment brandNewComment = new Comment(this, author, body);
         comments.add(brandNewComment);
         return brandNewComment;
+    }
+
+    public void removeComment(User user, long commentId) throws AuthenticationException {
+        Comment findComment = comments.stream()
+                .filter(comment -> comment.getId() == commentId)
+                .findFirst()
+                .orElseThrow(NoSuchElementException::new);
+        validateUserDeletePermission(user, findComment);
+
+        comments.remove(findComment);
+    }
+
+    private void validateUserDeletePermission(User user, Comment comment) throws AuthenticationException {
+        if (user.equals(author) || user.equals(comment.getAuthor())) {
+            throw new AuthenticationException("Not authorized to delete this comment");
+        }
     }
 }

@@ -11,6 +11,8 @@ import study.backend.realworld.application.article.dto.response.MultipleCommentR
 import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 
+import javax.security.sasl.AuthenticationException;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
@@ -33,5 +35,12 @@ public class CommentRestController {
         return ResponseEntity.ok(
                 MultipleCommentResponse.from(commentService.findAllCommentsOnArticle(user, slug))
         );
+    }
+
+    @DeleteMapping("/articles/{slug}/comments/{id}")
+    public void deleteComment(@AuthenticationPrincipal User user,
+                              @PathVariable String slug,
+                              @PathVariable long id) throws AuthenticationException, UserNotFountException {
+        commentService.deleteCommentById(user, slug, id);
     }
 }

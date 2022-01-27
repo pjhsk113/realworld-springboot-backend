@@ -9,6 +9,7 @@ import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 import study.backend.realworld.application.user.repository.UserRepository;
 
+import javax.security.sasl.AuthenticationException;
 import java.util.Set;
 
 @Service
@@ -33,4 +34,10 @@ public class CommentService {
         return findUser.getArticleComments(findArticle);
     }
 
+    public void deleteCommentById(User user, String slug, long commentId) throws UserNotFountException, AuthenticationException {
+        Article findArticle = articleRepository.findArticleByContentsTitleSlug(slug);
+
+        User findUser = userRepository.findById(user.getId()).orElseThrow(UserNotFountException::new);
+        findUser.deleteArticleComment(findArticle, commentId);
+    }
 }
