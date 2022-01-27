@@ -16,6 +16,7 @@ import javax.persistence.*;
 import javax.security.sasl.AuthenticationException;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Table(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -121,5 +122,19 @@ public class User {
 
     public Comment addCommentToArticle(Article article, String body) {
         return article.addComment(this, body);
+    }
+
+    public Set<Comment> getArticleComments(Article article) {
+        return article.getComments().stream()
+                .map(this::getComment)
+                .collect(Collectors.toSet());
+    }
+
+    private Comment getComment(Comment comment) {
+        refreshFollowingStatus(comment.getAuthor());
+        return comment;
+    }
+    private Profile refreshFollowingStatus(User user) {
+        return user.profile.followingStatus(follows.contains(user));
     }
 }
