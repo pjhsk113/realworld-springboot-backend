@@ -45,4 +45,9 @@ public class Profile {
     public void changeImage(Image image) {
         this.image = image;
     }
+
+    public Profile followingStatus(boolean following) {
+        this.following = following;
+        return this;
+    }
 }
