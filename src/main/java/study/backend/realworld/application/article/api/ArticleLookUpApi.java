@@ -6,31 +6,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import study.backend.realworld.application.article.application.ArticleService;
-import study.backend.realworld.application.article.dto.request.ArticlePostRequest;
-import study.backend.realworld.application.article.dto.request.ArticleUpdateRequest;
 import study.backend.realworld.application.article.dto.response.ArticleResponse;
 import study.backend.realworld.application.article.dto.response.MultipleArticlesResponse;
 import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.UserName;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 
-import javax.security.sasl.AuthenticationException;
-import javax.validation.Valid;
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-public class ArticleRestController {
-
+public class ArticleLookUpApi {
     private final ArticleService articleService;
-
-    @PostMapping("/articles")
-    public ResponseEntity<ArticleResponse> postArticle(@AuthenticationPrincipal User user,
-                                                       @Valid @RequestBody ArticlePostRequest request) throws UserNotFountException {
-        return ResponseEntity.ok(
-                ArticleResponse.from(articleService.createArticle(user, request.toArticleContents()))
-        );
-    }
 
     @GetMapping("/articles")
     public ResponseEntity<MultipleArticlesResponse> getArticles(Pageable pageable) {
@@ -71,38 +57,6 @@ public class ArticleRestController {
     public ResponseEntity<ArticleResponse> getArticleBySlug(@PathVariable String slug) {
         return ResponseEntity.ok(
                 ArticleResponse.from(articleService.findArticleBySlug(slug))
-        );
-    }
-
-    @PutMapping("/articles/{slug}")
-    public ResponseEntity<ArticleResponse> updateArticleBySlug(@AuthenticationPrincipal User user,
-                                                               @PathVariable String slug,
-                                                               @RequestBody ArticleUpdateRequest request) throws UserNotFountException, AuthenticationException {
-        return ResponseEntity.ok(
-                ArticleResponse.from(articleService.updateArticle(user, slug, request.toUpdateArticleModel()))
-        );
-    }
-
-    @DeleteMapping("/articles/{slug}")
-    public void deleteArticleBySlug(@AuthenticationPrincipal User user,
-                                                    @PathVariable String slug) throws UserNotFountException {
-        articleService.deleteArticleBySlug(user, slug);
-    }
-
-    @PostMapping("/articles/{slug}/favorite")
-    public ResponseEntity<ArticleResponse> favoriteArticleBySlug(@AuthenticationPrincipal User user,
-                                                                 @PathVariable String slug) throws UserNotFountException {
-
-        return ResponseEntity.ok(
-                ArticleResponse.from(articleService.favoriteArticle(user, slug))
-        );
-    }
-
-    @DeleteMapping("/articles/{slug}/favorite")
-    public ResponseEntity<ArticleResponse> unfavoriteArticleBySlug(@AuthenticationPrincipal User user,
-                                                                   @PathVariable String slug) throws UserNotFountException {
-        return ResponseEntity.ok(
-                ArticleResponse.from(articleService.unfavoriteArticle(user, slug))
         );
     }
 }
