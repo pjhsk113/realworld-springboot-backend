@@ -1,4 +1,4 @@
-package study.backend.realworld.application.article.api;
+package study.backend.realworld.application.article.api.tag;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import study.backend.realworld.application.article.dto.response.TagsResponse;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-public class TagRestController {
+public class TagsLookUpApi {
 
     private final TagService tagService;
 
