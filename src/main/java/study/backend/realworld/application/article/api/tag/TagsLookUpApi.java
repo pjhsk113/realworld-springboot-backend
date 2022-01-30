@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import study.backend.realworld.application.article.application.TagService;
+import study.backend.realworld.application.article.application.tag.TagInformationFindExecutor;
 import study.backend.realworld.application.article.dto.response.TagsResponse;
 
 @RestController
@@ -13,12 +13,12 @@ import study.backend.realworld.application.article.dto.response.TagsResponse;
 @RequestMapping("/api")
 public class TagsLookUpApi {
 
-    private final TagService tagService;
+    private final TagInformationFindExecutor tagInformationFindExecutor;
 
     @GetMapping("/tags")
     public ResponseEntity<TagsResponse> getTagList() {
         return ResponseEntity.ok(
-                TagsResponse.from(tagService.findAllTags())
+                TagsResponse.from(tagInformationFindExecutor.findAllTags())
         );
     }
 }
