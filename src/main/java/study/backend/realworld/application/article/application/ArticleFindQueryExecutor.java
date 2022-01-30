@@ -3,7 +3,7 @@ package study.backend.realworld.application.article.application;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import study.backend.realworld.application.article.application.tag.TagInformationFindProcessor;
 import study.backend.realworld.application.article.domain.Article;
 import study.backend.realworld.application.article.domain.Tag;
@@ -14,9 +14,9 @@ import study.backend.realworld.application.user.exception.UserNotFountException;
 
 import java.util.Optional;
 
-@Component
+@Service
 @RequiredArgsConstructor
-public class ArticleFindCommandExecutor {
+public class ArticleFindQueryExecutor {
     private final TagInformationFindProcessor tagInformationFindProcessor;
     private final ArticleFindProcessor articleFindProcessor;
     private final UserFindProcessor userFindProcessor;
@@ -50,5 +50,4 @@ public class ArticleFindCommandExecutor {
     public Article findArticleBySlug(String slug) {
         return articleFindProcessor.findBySlug(slug);
     }
-    
 }
