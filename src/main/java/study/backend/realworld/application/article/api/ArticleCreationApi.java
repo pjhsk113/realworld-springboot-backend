@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import study.backend.realworld.application.article.application.ArticleService;
+import study.backend.realworld.application.article.application.ArticleCommandExecutor;
 import study.backend.realworld.application.article.dto.request.ArticlePostRequest;
 import study.backend.realworld.application.article.dto.response.ArticleResponse;
 import study.backend.realworld.application.user.domain.User;
@@ -19,13 +19,13 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 public class ArticleCreationApi {
-    private final ArticleService articleService;
+    private final ArticleCommandExecutor articleCommandExecutor;
 
     @PostMapping("/articles")
     public ResponseEntity<ArticleResponse> postArticle(@AuthenticationPrincipal User user,
                                                        @Valid @RequestBody ArticlePostRequest request) throws UserNotFountException {
         return ResponseEntity.ok(
-                ArticleResponse.from(articleService.createArticle(user, request.toArticleContents()))
+                ArticleResponse.from(articleCommandExecutor.createArticle(user, request.toArticleContents()))
         );
     }
 }

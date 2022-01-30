@@ -1,3 +1,5 @@
+package study.backend.realworld.application.article.application;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
