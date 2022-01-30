@@ -102,11 +102,11 @@ public class User {
         profile.changeUserName(userName);
     }
 
-    public Article updateArticle(Article article, ArticleUpdateModel request) throws AuthenticationException {
+    public Article updateArticle(Article article, ArticleUpdateModel updateArticleInformation) throws AuthenticationException {
         if (article.getAuthor() != this) {
             throw new AuthenticationException("You are not authorized to update this article");
         }
-        article.updateArticle(request);
+        article.updateArticle(updateArticleInformation);
         return article;
     }
 
