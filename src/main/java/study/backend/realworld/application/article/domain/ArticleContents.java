@@ -37,14 +37,19 @@ public class ArticleContents {
         this.tags = tags;
     }
 
-    public Set<String> tagToString() {
+    public Set<String> convertTagTypeToString() {
         return tags.stream()
                 .map(Tag::toString)
                 .collect(Collectors.toSet());
     }
 
-    public void refreshTags(Set<Tag> tags) {
-        this.tags = tags;
+    public ArticleContents refreshTags(Set<Tag> tags) {
+        return new ArticleContents(
+                this.title,
+                this.description,
+                this.body,
+                tags
+        );
     }
 
     public void updateArticleContents(ArticleUpdateModel updateModel) {
