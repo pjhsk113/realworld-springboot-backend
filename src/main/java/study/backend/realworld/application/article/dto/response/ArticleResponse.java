@@ -42,7 +42,7 @@ public class ArticleResponse {
                 titles.getTitle(),
                 contents.getDescription(),
                 contents.getBody(),
-                contents.tagToString(),
+                contents.convertTagTypeToString(),
                 article.getCreatedAt(),
                 article.getUpdatedAt(),
                 article.isFavorited(),
