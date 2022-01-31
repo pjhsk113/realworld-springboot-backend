@@ -19,7 +19,7 @@ import javax.transaction.Transactional;
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-public abstract class IntegrationTests {
+public abstract class IntegrationTestUtils {
     protected static final String AUTHORIZATION = "Authorization";
 
     @Autowired

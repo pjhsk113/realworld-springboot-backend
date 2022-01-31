@@ -3,7 +3,7 @@ package study.backend.realworld.application.user.web;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import study.backend.realworld.application.IntegrationTests;
+import study.backend.realworld.application.IntegrationTestUtils;
 import study.backend.realworld.application.user.domain.User;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
@@ -11,7 +11,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-class FollowRestControllerTest extends IntegrationTests {
+class FollowRestControllerTest extends IntegrationTestUtils {
 
     private User user;
 
