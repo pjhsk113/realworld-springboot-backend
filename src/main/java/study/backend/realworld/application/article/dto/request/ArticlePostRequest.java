@@ -1,5 +1,6 @@
 package study.backend.realworld.application.article.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import study.backend.realworld.application.article.domain.ArticleContents;
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
+@JsonRootName("article")
 @AllArgsConstructor
 @NoArgsConstructor
 public class ArticlePostRequest {
