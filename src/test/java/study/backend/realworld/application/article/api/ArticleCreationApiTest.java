@@ -1,6 +1,7 @@
 package study.backend.realworld.application.article.api;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -15,6 +16,24 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 class ArticleCreationApiTest extends IntegrationTestUtils {
+
+    @DisplayName("새로운 글 생성 요청 시 객체 필수 값이 누락된 경우 400 에러가 발생한다.")
+    @Test
+    void when_post_article_success() throws Exception {
+        mockMvc.perform(post("/api/articles")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .header(AUTHORIZATION, setUpToken)
+                        .content("{\n" +
+                                "        \"title\": \"How to train your dragon\",\n" +
+                                "        \"description\": \"Ever wonder how?\",\n" +
+                                "        \"body\": \"Very carefully.\",\n" +
+                                "        \"tagList\": [\n" +
+                                "            \"dragons\",\n" +
+                                "            \"training\"\n" +
+                                "        ]\n" +
+                                "}"))
+                .andExpect(status().isOk());
+    }
 
     @DisplayName("새로운 글 생성 요청 시 객체 필수 값이 누락된 경우 400 에러가 발생한다.")
     @ParameterizedTest

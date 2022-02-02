@@ -2,7 +2,7 @@ package study.backend.realworld.application.article.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 import study.backend.realworld.application.article.domain.ArticleContents;
 import study.backend.realworld.application.article.domain.ArticleTitle;
 import study.backend.realworld.application.article.domain.Tag;
@@ -13,7 +13,7 @@ import java.util.Set;
 
 @JsonRootName("article")
 @AllArgsConstructor
-@NoArgsConstructor
+@Getter
 public class ArticlePostRequest {
     @NotBlank
     String title;
