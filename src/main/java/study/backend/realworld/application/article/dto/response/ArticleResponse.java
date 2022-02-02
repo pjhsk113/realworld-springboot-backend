@@ -1,5 +1,7 @@
 package study.backend.realworld.application.article.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.Getter;
 import study.backend.realworld.application.article.domain.Article;
 import study.backend.realworld.application.article.domain.ArticleContents;
 import study.backend.realworld.application.article.domain.ArticleTitle;
@@ -8,6 +10,8 @@ import study.backend.realworld.application.user.dto.response.ProfileResponse;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+@JsonRootName("article")
+@Getter
 public class ArticleResponse {
     private String slug;
     private String title;
