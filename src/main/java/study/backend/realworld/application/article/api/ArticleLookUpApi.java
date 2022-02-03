@@ -40,9 +40,9 @@ public class ArticleLookUpApi {
     }
 
     @GetMapping(value = "/articles", params = { "favorited" })
-    public ResponseEntity<MultipleArticlesResponse> getArticlesByFavoritedUser(@RequestParam UserName userName, Pageable pageable) throws UserNotFountException {
+    public ResponseEntity<MultipleArticlesResponse> getArticlesByFavoritedUser(@RequestParam UserName favorited, Pageable pageable) throws UserNotFountException {
         return ResponseEntity.ok(
-                MultipleArticlesResponse.from(articleFindQueryExecutor.findArticleFavoritedByUserName(userName, pageable))
+                MultipleArticlesResponse.from(articleFindQueryExecutor.findArticleFavoritedByUserName(favorited, pageable))
         );
     }
 
