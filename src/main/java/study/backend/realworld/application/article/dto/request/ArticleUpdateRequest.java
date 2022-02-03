@@ -1,12 +1,12 @@
 package study.backend.realworld.application.article.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import study.backend.realworld.application.article.domain.model.ArticleUpdateModel;
 
+@JsonRootName("article")
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 public class ArticleUpdateRequest {
     private String title;
