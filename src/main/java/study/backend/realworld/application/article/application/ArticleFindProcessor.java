@@ -10,6 +10,7 @@ import study.backend.realworld.application.article.repository.ArticleRepository;
 import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.UserName;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Component
@@ -37,6 +38,7 @@ public class ArticleFindProcessor {
     }
 
     public Article findBySlug(String slug) {
-        return articleRepository.findArticleByContentsTitleSlug(slug);
+        return articleRepository.findArticleByContentsTitleSlug(slug)
+                .orElseThrow(NoSuchElementException::new);
     }
 }
