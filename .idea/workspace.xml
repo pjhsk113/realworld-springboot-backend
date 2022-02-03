@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="feat: Article 도메인 객체 추가 - 미완">
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="refactor: article api에서 의존하던 서비스 레이어의 클래스를 분리&#10;&#10;- R과 CUD를 분리&#10;- 모든 비즈니스를 담고있던 ArticleService 제거">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/98d2c2f1-4f06-4132-b5c2-fad537341f86.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/98d2c2f1-4f06-4132-b5c2-fad537341f86.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/domain/ArticleContents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/domain/ArticleContents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/domain/model/ArticleUpdateModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/domain/model/ArticleUpdateModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/dto/request/ArticleUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/dto/request/ArticleUpdateRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -70,16 +72,18 @@
       <recent name="study.backend.realworld.application.user" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="study.backend.realworld.application.article.api" />
       <recent name="study.backend.realworld.application.user.domain" />
       <recent name="study.backend.realworld.application.user.web" />
       <recent name="study.backend.realworld.infra.security.jwt" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="study.backend.realworld.application.article.api.comment" />
       <recent name="study.backend.realworld.application.user.domain.exception" />
       <recent name="study.backend.realworld.infra.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EmailTest.when_same_address_expect_equal_and_hashCode">
+  <component name="RunManager" selected="JUnit.ArticleUpdateApiTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -91,80 +95,80 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmailTest.when_same_address_expect_equal_and_hashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleDeleteApiTest.delete_article" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.article.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.EmailTest" />
-      <option name="METHOD_NAME" value="when_same_address_expect_equal_and_hashCode" />
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.api" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.api.ArticleDeleteApiTest" />
+      <option name="METHOD_NAME" value="delete_article" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FollowRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleLookUpApiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.article.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.FollowRestControllerTest" />
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.api" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.api.ArticleLookUpApiTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FollowRestControllerTest.when_follow_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleLookUpApiTest.find_one_article_by_slug_fail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.article.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.FollowRestControllerTest" />
-      <option name="METHOD_NAME" value="when_follow_success" />
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.api" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.api.ArticleLookUpApiTest" />
+      <option name="METHOD_NAME" value="find_one_article_by_slug_fail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FollowRestControllerTest.when_unfollow_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleUpdateApiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.article.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.FollowRestControllerTest" />
-      <option name="METHOD_NAME" value="when_unfollow_success" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.web" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.web.UserRestControllerTest" />
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.api" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.api.ArticleUpdateApiTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleUpdateApiTest.update_article" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.article.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.api" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.api.ArticleUpdateApiTest" />
+      <option name="METHOD_NAME" value="update_article" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EmailTest.when_same_address_expect_equal_and_hashCode" />
-        <item itemvalue="JUnit.FollowRestControllerTest.when_unfollow_success" />
-        <item itemvalue="JUnit.FollowRestControllerTest" />
-        <item itemvalue="JUnit.FollowRestControllerTest.when_follow_success" />
-        <item itemvalue="JUnit.UserRestControllerTest" />
+        <item itemvalue="JUnit.ArticleUpdateApiTest" />
+        <item itemvalue="JUnit.ArticleUpdateApiTest.update_article" />
+        <item itemvalue="JUnit.ArticleDeleteApiTest.delete_article" />
+        <item itemvalue="JUnit.ArticleLookUpApiTest.find_one_article_by_slug_fail" />
+        <item itemvalue="JUnit.ArticleLookUpApiTest" />
       </list>
     </recent_temporary>
   </component>
@@ -217,352 +221,363 @@
       <workItem from="1642303006480" duration="5254000" />
       <workItem from="1642506463519" duration="1954000" />
       <workItem from="1642572153957" duration="4993000" />
-      <workItem from="1642655648794" duration="5391000" />
+      <workItem from="1642655648794" duration="5931000" />
+      <workItem from="1642740402219" duration="7088000" />
+      <workItem from="1642831805977" duration="2146000" />
+      <workItem from="1643001133909" duration="5777000" />
+      <workItem from="1643085962385" duration="5894000" />
+      <workItem from="1643176426834" duration="9253000" />
+      <workItem from="1643256426715" duration="4815000" />
+      <workItem from="1643351353498" duration="8033000" />
+      <workItem from="1643520274774" duration="8025000" />
+      <workItem from="1643605843239" duration="6685000" />
+      <workItem from="1643777517241" duration="8909000" />
+      <workItem from="1643870940761" duration="5585000" />
     </task>
-    <task id="LOCAL-00025" summary="feat: Follow Controller 추가">
-      <created>1630748121265</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
+    <task id="LOCAL-00083" summary="feat: article 생성 로직 추가">
+      <created>1642833366222</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
       <option name="project" value="LOCAL" />
-      <updated>1630748121265</updated>
+      <updated>1642833366223</updated>
     </task>
-    <task id="LOCAL-00026" summary="feat: Follow Controller endpoint 추가&#10;&#10;- unfollow, find 추가">
-      <created>1630748239516</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
+    <task id="LOCAL-00084" summary="feat: 글 목록 전체 조회 API 추가">
+      <created>1643006422778</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
       <option name="project" value="LOCAL" />
-      <updated>1630748239516</updated>
+      <updated>1643006422779</updated>
     </task>
-    <task id="LOCAL-00027" summary="test: Follow Controller Test 추가&#10;&#10;- setUp 추가">
-      <created>1630748531481</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
+    <task id="LOCAL-00085" summary="feat: 글 목록 전체 조회 비즈니스로직 추가">
+      <created>1643006461085</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
       <option name="project" value="LOCAL" />
-      <updated>1630748531481</updated>
+      <updated>1643006461085</updated>
     </task>
-    <task id="LOCAL-00028" summary="feat: user 별 follow 목록 추가">
-      <created>1632041481506</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
+    <task id="LOCAL-00086" summary="feat: 작성자 이름으로 글 목록 조회 API 추가">
+      <created>1643006514031</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
       <option name="project" value="LOCAL" />
-      <updated>1632041481506</updated>
+      <updated>1643006514031</updated>
     </task>
-    <task id="LOCAL-00029" summary="feat: userName 검색 기능 추가">
-      <created>1632041520638</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
+    <task id="LOCAL-00087" summary="feat: 좋아요 누른 유저 정보 기반 글 조회 API 추가">
+      <created>1643007972700</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
       <option name="project" value="LOCAL" />
-      <updated>1632041520638</updated>
+      <updated>1643007972700</updated>
     </task>
-    <task id="LOCAL-00030" summary="feat: User Follow endPoint 추가">
-      <created>1632041573213</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
+    <task id="LOCAL-00088" summary="feat: slug, feed 조회 API 추가">
+      <created>1643091214384</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
       <option name="project" value="LOCAL" />
-      <updated>1632041573213</updated>
+      <updated>1643091214384</updated>
     </task>
-    <task id="LOCAL-00031" summary="feat: follow 기능 구현">
-      <created>1632041593118</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
+    <task id="LOCAL-00089" summary="feat: slug, feed 조회 비즈니스 로직 추가">
+      <created>1643091257942</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
       <option name="project" value="LOCAL" />
-      <updated>1632041593118</updated>
+      <updated>1643091257942</updated>
     </task>
-    <task id="LOCAL-00032" summary="feat: custom Exception 추가&#10;&#10;- 이미 follow한 유저를 또 follow할 경우 발생">
-      <created>1632041656545</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
+    <task id="LOCAL-00090" summary="feat: 글 업데이트 request, model 생성">
+      <created>1643091310691</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
       <option name="project" value="LOCAL" />
-      <updated>1632041656545</updated>
+      <updated>1643091310691</updated>
     </task>
-    <task id="LOCAL-00033" summary="feat: unfollow 기능 추가">
-      <created>1632042060272</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
+    <task id="LOCAL-00091" summary="refactor: 정적 팩터리 메서드명 변경 of -&gt; from">
+      <created>1643091423854</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
       <option name="project" value="LOCAL" />
-      <updated>1632042060272</updated>
+      <updated>1643091423854</updated>
     </task>
-    <task id="LOCAL-00034" summary="refactor: User password 컬럼 위치 변경">
-      <created>1632644868406</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
+    <task id="LOCAL-00092" summary="feat: article update 관련 도메인 로직 추가">
+      <created>1643091471383</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
       <option name="project" value="LOCAL" />
-      <updated>1632644868406</updated>
+      <updated>1643091471383</updated>
     </task>
-    <task id="LOCAL-00035" summary="fix: Profile의 username을 못찾던 문제 수정&#10;&#10;- Embedded의 이름을 명시해 username을 찾을 수 있도록 변경&#10;findByUsername -&gt; findByProfileUsername">
-      <created>1632644985190</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
+    <task id="LOCAL-00093" summary="refactor: 클래스명 자연스러운 이름으로 변경">
+      <created>1643091502125</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
       <option name="project" value="LOCAL" />
-      <updated>1632644985190</updated>
+      <updated>1643091502125</updated>
     </task>
-    <task id="LOCAL-00036" summary="refactor: username 찾는 메서드명 변경">
-      <created>1632645032107</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
+    <task id="LOCAL-00094" summary="feat: article 수정 API 추가">
+      <created>1643091525581</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
       <option name="project" value="LOCAL" />
-      <updated>1632645032107</updated>
+      <updated>1643091525581</updated>
     </task>
-    <task id="LOCAL-00037" summary="refactor: 임포트 정리">
-      <created>1632645059591</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
+    <task id="LOCAL-00095" summary="feat: article favorite API 추가">
+      <created>1643180125901</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
       <option name="project" value="LOCAL" />
-      <updated>1632645059591</updated>
+      <updated>1643180125901</updated>
     </task>
-    <task id="LOCAL-00038" summary="feat: Exception Response statusCode 추가">
-      <created>1632645983506</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
+    <task id="LOCAL-00096" summary="feat: 글 삭제 API 추가">
+      <created>1643180978842</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
       <option name="project" value="LOCAL" />
-      <updated>1632645983507</updated>
+      <updated>1643180978842</updated>
     </task>
-    <task id="LOCAL-00039" summary="fix: PathVariable 이름 오타 수정&#10;&#10;- userName -&gt; username으로 변경">
-      <created>1632646024028</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
+    <task id="LOCAL-00097" summary="feat: 댓글 생성 Request 객체 생성">
+      <created>1643184950264</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
       <option name="project" value="LOCAL" />
-      <updated>1632646024028</updated>
+      <updated>1643184950264</updated>
     </task>
-    <task id="LOCAL-00040" summary="test: FollowRestController - follow 관련 슬라이스 테스트">
-      <created>1632646111138</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
+    <task id="LOCAL-00098" summary="feat: 댓글 등록 응답용 객체 추가">
+      <created>1643184975605</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
       <option name="project" value="LOCAL" />
-      <updated>1632646111138</updated>
+      <updated>1643184975605</updated>
     </task>
-    <task id="LOCAL-00041" summary="change: FollowRestController unFollow endPoint 변경">
-      <created>1632646603501</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
+    <task id="LOCAL-00099" summary="feat: 댓글 등록 관련 도메인 로직 추가">
+      <created>1643185016778</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
       <option name="project" value="LOCAL" />
-      <updated>1632646603501</updated>
+      <updated>1643185016778</updated>
     </task>
-    <task id="LOCAL-00042" summary="change: UserNotFountException ResponseStatus 변경&#10;&#10;- 401 -&gt; 400">
-      <created>1632646634241</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
+    <task id="LOCAL-00100" summary="feat: 댓글 생성 API 추가">
+      <created>1643185033516</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
       <option name="project" value="LOCAL" />
-      <updated>1632646634242</updated>
+      <updated>1643185033516</updated>
     </task>
-    <task id="LOCAL-00043" summary="test: FollowRestController unfollow 기능 테스트">
-      <created>1632646667903</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
+    <task id="LOCAL-00101" summary="feat: 댓글 리스트 반환 객체 추가">
+      <created>1643268636006</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
       <option name="project" value="LOCAL" />
-      <updated>1632646667903</updated>
+      <updated>1643268636006</updated>
     </task>
-    <task id="LOCAL-00044" summary="refactor: import 정리">
-      <created>1632646710682</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
+    <task id="LOCAL-00102" summary="feat: 댓글 목록 조회 API 추가">
+      <created>1643268662561</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
       <option name="project" value="LOCAL" />
-      <updated>1632646710682</updated>
+      <updated>1643268662561</updated>
     </task>
-    <task id="LOCAL-00045" summary="refactor: package 변경">
-      <created>1637995923243</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
+    <task id="LOCAL-00103" summary="feat: 댓글 목록 조회 도메인 로직 추가">
+      <created>1643268756884</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
       <option name="project" value="LOCAL" />
-      <updated>1637995923243</updated>
+      <updated>1643268756884</updated>
     </task>
-    <task id="LOCAL-00046" summary="feat: 도메인 Entity 쪼개기!">
-      <created>1641986040705</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
+    <task id="LOCAL-00104" summary="feat: 댓글 목록 조회 도메인 로직 추가">
+      <created>1643268781147</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
       <option name="project" value="LOCAL" />
-      <updated>1641986040705</updated>
+      <updated>1643268781147</updated>
     </task>
-    <task id="LOCAL-00047" summary="feat: User Entity 추가&#10;&#10;- Embedded를 최대한 활용해보자">
-      <created>1641986088556</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
+    <task id="LOCAL-00105" summary="feat: 댓글 목록 조회 비즈니스 로직 추가">
+      <created>1643268823198</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
       <option name="project" value="LOCAL" />
-      <updated>1641986088556</updated>
+      <updated>1643268823198</updated>
     </task>
-    <task id="LOCAL-00048" summary="feat: Profile Entity 추가&#10;&#10;- Embedded를 최대한 활용해보자">
-      <created>1641986107207</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
+    <task id="LOCAL-00106" summary="feat: 댓글 삭제 API 추가&#10;&#10;- 비즈니스, 도메인 로직 기능 추가 포함">
+      <created>1643268877980</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
       <option name="project" value="LOCAL" />
-      <updated>1641986107207</updated>
+      <updated>1643268877980</updated>
     </task>
-    <task id="LOCAL-00049" summary="feat: UserEntity follow 기능 추가">
-      <created>1642078118661</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
+    <task id="LOCAL-00107" summary="feat: article api 기능 별 분리">
+      <created>1643354525154</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
       <option name="project" value="LOCAL" />
-      <updated>1642078118661</updated>
+      <updated>1643354525155</updated>
     </task>
-    <task id="LOCAL-00050" summary="refactor: Model 필드 변경">
-      <created>1642164353032</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
+    <task id="LOCAL-00108" summary="feat: 댓글 기능 별 api 분리&#10;&#10;- article의 하위 패키지로 세분화시킴">
+      <created>1643354578157</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
       <option name="project" value="LOCAL" />
-      <updated>1642164353032</updated>
+      <updated>1643354578158</updated>
     </task>
-    <task id="LOCAL-00051" summary="refactor: request 객체 변경">
-      <created>1642164387508</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
+    <task id="LOCAL-00109" summary="feat: 태그 조회 api 분리&#10;&#10;- article 하위 패키지로 세분화">
+      <created>1643354605738</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
       <option name="project" value="LOCAL" />
-      <updated>1642164387508</updated>
+      <updated>1643354605738</updated>
     </task>
-    <task id="LOCAL-00052" summary="refactor: 각 도메인에 필요한 생성자, 메서드 추가">
-      <created>1642164432979</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
+    <task id="LOCAL-00110" summary="feat: article 조회 세부 구현 분리&#10;&#10;- 비즈니스 로직과 세부 구현을 분리함&#10;- 의존성 최소화">
+      <created>1643428773921</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
       <option name="project" value="LOCAL" />
-      <updated>1642164432979</updated>
+      <updated>1643428773921</updated>
     </task>
-    <task id="LOCAL-00053" summary="refactor: controller 매핑 객체 변경">
-      <created>1642164468261</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
+    <task id="LOCAL-00111" summary="feat: 분리한 조회 로직 API에 적용">
+      <created>1643428947855</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
       <option name="project" value="LOCAL" />
-      <updated>1642164468261</updated>
+      <updated>1643428947855</updated>
     </task>
-    <task id="LOCAL-00054" summary="refactor: 타입 변경">
-      <created>1642164496034</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
+    <task id="LOCAL-00112" summary="feat: Tag 관련 로직 분리">
+      <created>1643428983793</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
       <option name="project" value="LOCAL" />
-      <updated>1642164496035</updated>
+      <updated>1643428983793</updated>
     </task>
-    <task id="LOCAL-00055" summary="refactor: user 업데이트 로직 리팩터링&#10;&#10;- 타입 변환 로직 추가">
-      <created>1642225387749</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
+    <task id="LOCAL-00113" summary="refactor: tag 새로고침 기능이 setter 대신 새로운 객체를 반환하도록 변경">
+      <created>1643526495798</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
       <option name="project" value="LOCAL" />
-      <updated>1642225387750</updated>
+      <updated>1643526495798</updated>
     </task>
-    <task id="LOCAL-00056" summary="refactor: follow 기능 리팩터링&#10;&#10;- 클래스명 변경 UserEntity -&gt; User, ProfileEntity -&gt; Profile&#10;- 참조 클래스 변경 및 로직 수정">
-      <created>1642226445542</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
+    <task id="LOCAL-00114" summary="refactor: tag 타입 변환 메서드명 변경">
+      <created>1643526521115</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
       <option name="project" value="LOCAL" />
-      <updated>1642226445542</updated>
+      <updated>1643526521115</updated>
     </task>
-    <task id="LOCAL-00057" summary="fix: UserName 매핑 실패 오류 수정">
-      <created>1642229679255</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
+    <task id="LOCAL-00115" summary="refactor: 글 업데이트 정보 매개변수를 명확한 이름으로 변경">
+      <created>1643526662648</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
       <option name="project" value="LOCAL" />
-      <updated>1642229679255</updated>
+      <updated>1643526662648</updated>
     </task>
-    <task id="LOCAL-00058" summary="test: 테스트 코드 추가">
-      <created>1642229706059</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
+    <task id="LOCAL-00116" summary="feat: 조회용 비즈니스 로직을 담당하는 클래스명 변경">
+      <created>1643526746146</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
       <option name="project" value="LOCAL" />
-      <updated>1642229706059</updated>
+      <updated>1643526746146</updated>
     </task>
-    <task id="LOCAL-00059" summary="test: Follow 테스트 코드 수정">
-      <created>1642306744140</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
+    <task id="LOCAL-00117" summary="feat: CUD를 담당하는 비즈니스 클래스 생성&#10;&#10;- 비즈니스 로직과 세부 구현을 분리해 비즈니스 로직에서 흐름 파악이 용이하도록 변경">
+      <created>1643526879406</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
       <option name="project" value="LOCAL" />
-      <updated>1642306744141</updated>
+      <updated>1643526879407</updated>
     </task>
-    <task id="LOCAL-00060" summary="test: 테스트 코드 보강하기&#10;&#10;- displayName 추가">
-      <created>1642307879980</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
+    <task id="LOCAL-00118" summary="refactor: article api에서 의존하던 서비스 레이어의 클래스를 분리&#10;&#10;- R과 CUD를 분리&#10;- 모든 비즈니스를 담고있던 ArticleService 제거">
+      <created>1643527054171</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
       <option name="project" value="LOCAL" />
-      <updated>1642307879980</updated>
+      <updated>1643527054171</updated>
     </task>
-    <task id="LOCAL-00061" summary="test: Domain Test 추가 - Email&#10;&#10;- Email 객체의 동치성 검사 테스트 추가">
-      <created>1642308973538</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
+    <task id="LOCAL-00119" summary="feat: 요청 정보와 매핑되는 Tag 목록을 반환하는 메서드 추가">
+      <created>1643527180760</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
       <option name="project" value="LOCAL" />
-      <updated>1642308973538</updated>
+      <updated>1643527180760</updated>
     </task>
-    <task id="LOCAL-00062" summary="feat: Email equals and hashCode 추가">
-      <created>1642308997140</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
+    <task id="LOCAL-00120" summary="refactor: tag 조회 api가 참조하는 클래스명 변경">
+      <created>1643527230255</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
       <option name="project" value="LOCAL" />
-      <updated>1642308997140</updated>
+      <updated>1643527230255</updated>
     </task>
-    <task id="LOCAL-00063" summary="feat: User - follows rferencedColumnName 추가">
-      <created>1642512744842</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
+    <task id="LOCAL-00121" summary="feat: comment 비즈니스 로직 추가&#10;&#10;- R과 CUD를 분리&#10;- 기존 ArticleFindProcessor와 UserFindProcessor에 의존성을 가짐">
+      <created>1643528167653</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
       <option name="project" value="LOCAL" />
-      <updated>1642512744843</updated>
+      <updated>1643528167653</updated>
     </task>
-    <task id="LOCAL-00064" summary="feat: Article 도메인 객체 추가 - 미완">
-      <created>1642512769141</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
+    <task id="LOCAL-00122" summary="refactor: comment api 의존성 변경&#10;&#10;- CommentService 제거">
+      <created>1643528200059</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
       <option name="project" value="LOCAL" />
-      <updated>1642512769141</updated>
+      <updated>1643528200060</updated>
     </task>
-    <task id="LOCAL-00065" summary="feat: ArticleTitle 추가">
-      <created>1642575943202</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
+    <task id="LOCAL-00123" summary="test: article create api test 추가">
+      <created>1643612637806</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
       <option name="project" value="LOCAL" />
-      <updated>1642575943202</updated>
+      <updated>1643612637806</updated>
     </task>
-    <task id="LOCAL-00066" summary="feat: Tag 추가">
-      <created>1642575969415</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
+    <task id="LOCAL-00124" summary="feat: create request 객체에 JsonRootName 추가">
+      <created>1643612685834</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
       <option name="project" value="LOCAL" />
-      <updated>1642575969415</updated>
+      <updated>1643612685834</updated>
     </task>
-    <task id="LOCAL-00067" summary="feat: ArticleContents 추가">
-      <created>1642576044679</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
+    <task id="LOCAL-00125" summary="test: 글 생성 테스트 추가">
+      <created>1643786656500</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1642576044679</updated>
+      <updated>1643786656500</updated>
     </task>
-    <task id="LOCAL-00068" summary="feat: JPA Auditing 설정 추가">
-      <created>1642576097009</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
+    <task id="LOCAL-00126" summary="test: article 조회 테스트 추기">
+      <created>1643786850313</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
       <option name="project" value="LOCAL" />
-      <updated>1642576097009</updated>
+      <updated>1643786850313</updated>
     </task>
-    <task id="LOCAL-00069" summary="feat: Article 세부 항목 추가(TODO Comment)&#10;&#10;- 연과 관계 설정&#10;- JPA Auditing 추가&#10;- favorite 기능 추가">
-      <created>1642576235355</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
+    <task id="LOCAL-00127" summary="test: article 조회 API 테스트 추가">
+      <created>1643873718782</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
       <option name="project" value="LOCAL" />
-      <updated>1642576235355</updated>
+      <updated>1643873718782</updated>
     </task>
-    <task id="LOCAL-00070" summary="refactor: JPA Auditing 기능 분리&#10;&#10;- BaseTime을 상속하도록 변경">
-      <created>1642656520479</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
+    <task id="LOCAL-00128" summary="refactor: article slug 조회 반환타입 변경 Article -&gt; Optional&lt;Article&gt;">
+      <created>1643873756981</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
       <option name="project" value="LOCAL" />
-      <updated>1642656520480</updated>
+      <updated>1643873756981</updated>
     </task>
-    <task id="LOCAL-00071" summary="feat: Equals And HashCode 추가">
-      <created>1642656950223</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
+    <task id="LOCAL-00129" summary="refactor: article slug 조회 로직에 예외(NoSuchElementException) 추가">
+      <created>1643873796859</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
       <option name="project" value="LOCAL" />
-      <updated>1642656950223</updated>
+      <updated>1643873796859</updated>
     </task>
-    <task id="LOCAL-00072" summary="feat: Comment 객체 추가">
-      <created>1642657125360</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
+    <task id="LOCAL-00130" summary="fix: article favorited user 쿼리 파라미터 이름이 달라 매핑안되던 문제 수정">
+      <created>1643873842841</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
       <option name="project" value="LOCAL" />
-      <updated>1642657125360</updated>
+      <updated>1643873842841</updated>
     </task>
-    <task id="LOCAL-00073" summary="feat: Article comment 연관관계 설정">
-      <created>1642657139417</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
+    <task id="LOCAL-00131" summary="refactor: response 객체에 getter 추가">
+      <created>1643873871180</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
       <option name="project" value="LOCAL" />
-      <updated>1642657139417</updated>
+      <updated>1643873871180</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,32 +613,32 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="feat: UserEntity follow 기능 추가" />
-    <MESSAGE value="refactor: Model 필드 변경" />
-    <MESSAGE value="refactor: request 객체 변경" />
-    <MESSAGE value="refactor: 각 도메인에 필요한 생성자, 메서드 추가" />
-    <MESSAGE value="refactor: controller 매핑 객체 변경" />
-    <MESSAGE value="refactor: 타입 변경" />
-    <MESSAGE value="refactor: user 업데이트 로직 리팩터링&#10;&#10;- 타입 변환 로직 추가" />
-    <MESSAGE value="refactor: follow 기능 리팩터링&#10;&#10;- 클래스명 변경 UserEntity -&gt; User, ProfileEntity -&gt; Profile&#10;- 참조 클래스 변경 및 로직 수정" />
-    <MESSAGE value="fix: UserName 매핑 실패 오류 수정" />
-    <MESSAGE value="test: 테스트 코드 추가" />
-    <MESSAGE value="test: Follow 테스트 코드 수정" />
-    <MESSAGE value="test: 테스트 코드 보강하기&#10;&#10;- displayName 추가" />
-    <MESSAGE value="test: Domain Test 추가 - Email&#10;&#10;- Email 객체의 동치성 검사 테스트 추가" />
-    <MESSAGE value="feat: Email equals and hashCode 추가" />
-    <MESSAGE value="feat: User - follows rferencedColumnName 추가" />
-    <MESSAGE value="feat: Article 도메인 객체 추가 - 미완" />
-    <MESSAGE value="feat: ArticleTitle 추가" />
-    <MESSAGE value="feat: Tag 추가" />
-    <MESSAGE value="feat: ArticleContents 추가" />
-    <MESSAGE value="feat: JPA Auditing 설정 추가" />
-    <MESSAGE value="feat: Article 세부 항목 추가(TODO Comment)&#10;&#10;- 연과 관계 설정&#10;- JPA Auditing 추가&#10;- favorite 기능 추가" />
-    <MESSAGE value="refactor: JPA Auditing 기능 분리&#10;&#10;- BaseTime을 상속하도록 변경" />
-    <MESSAGE value="feat: Equals And HashCode 추가" />
-    <MESSAGE value="feat: Comment 객체 추가" />
-    <MESSAGE value="feat: Article comment 연관관계 설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Article comment 연관관계 설정" />
+    <MESSAGE value="feat: article api 기능 별 분리" />
+    <MESSAGE value="feat: 댓글 기능 별 api 분리&#10;&#10;- article의 하위 패키지로 세분화시킴" />
+    <MESSAGE value="feat: 태그 조회 api 분리&#10;&#10;- article 하위 패키지로 세분화" />
+    <MESSAGE value="feat: article 조회 세부 구현 분리&#10;&#10;- 비즈니스 로직과 세부 구현을 분리함&#10;- 의존성 최소화" />
+    <MESSAGE value="feat: 분리한 조회 로직 API에 적용" />
+    <MESSAGE value="feat: Tag 관련 로직 분리" />
+    <MESSAGE value="refactor: tag 새로고침 기능이 setter 대신 새로운 객체를 반환하도록 변경" />
+    <MESSAGE value="refactor: tag 타입 변환 메서드명 변경" />
+    <MESSAGE value="refactor: 글 업데이트 정보 매개변수를 명확한 이름으로 변경" />
+    <MESSAGE value="feat: 조회용 비즈니스 로직을 담당하는 클래스명 변경" />
+    <MESSAGE value="feat: CUD를 담당하는 비즈니스 클래스 생성&#10;&#10;- 비즈니스 로직과 세부 구현을 분리해 비즈니스 로직에서 흐름 파악이 용이하도록 변경" />
+    <MESSAGE value="refactor: article api에서 의존하던 서비스 레이어의 클래스를 분리&#10;&#10;- R과 CUD를 분리&#10;- 모든 비즈니스를 담고있던 ArticleService 제거" />
+    <MESSAGE value="feat: 요청 정보와 매핑되는 Tag 목록을 반환하는 메서드 추가" />
+    <MESSAGE value="refactor: tag 조회 api가 참조하는 클래스명 변경" />
+    <MESSAGE value="feat: comment 비즈니스 로직 추가&#10;&#10;- R과 CUD를 분리&#10;- 기존 ArticleFindProcessor와 UserFindProcessor에 의존성을 가짐" />
+    <MESSAGE value="refactor: comment api 의존성 변경&#10;&#10;- CommentService 제거" />
+    <MESSAGE value="test: article create api test 추가" />
+    <MESSAGE value="feat: create request 객체에 JsonRootName 추가" />
+    <MESSAGE value="test: 글 생성 테스트 추가" />
+    <MESSAGE value="test: article 조회 테스트 추기" />
+    <MESSAGE value="test: article 조회 API 테스트 추가" />
+    <MESSAGE value="refactor: article slug 조회 반환타입 변경 Article -&gt; Optional&lt;Article&gt;" />
+    <MESSAGE value="refactor: article slug 조회 로직에 예외(NoSuchElementException) 추가" />
+    <MESSAGE value="fix: article favorited user 쿼리 파라미터 이름이 달라 매핑안되던 문제 수정" />
+    <MESSAGE value="refactor: response 객체에 getter 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: response 객체에 getter 추가" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -635,19 +650,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/TokenProvider.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/JwtTokenFilter.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/infra/security/jwt/JwtTokenFilter.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/domain/User.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

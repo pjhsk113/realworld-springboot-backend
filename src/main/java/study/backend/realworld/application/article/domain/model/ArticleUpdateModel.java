@@ -3,6 +3,8 @@ package study.backend.realworld.application.article.domain.model;
 import lombok.Getter;
 import study.backend.realworld.application.article.domain.ArticleTitle;
 
+import java.util.Optional;
+
 @Getter
 public class ArticleUpdateModel {
     private final ArticleTitle title;
@@ -17,9 +19,10 @@ public class ArticleUpdateModel {
 
     public static ArticleUpdateModel of(String title, String description, String body) {
         return new ArticleUpdateModel(
-                ArticleTitle.of(title),
-                description,
-                body
+                Optional.ofNullable(title).map(ArticleTitle::of).orElse(null),
+                Optional.ofNullable(description).orElse(null),
+                Optional.ofNullable(body).orElse(null)
         );
+
     }
 }
