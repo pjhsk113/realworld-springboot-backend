@@ -1,11 +1,13 @@
 package study.backend.realworld.application.article.dto.response;
 
+import lombok.Getter;
 import study.backend.realworld.application.article.domain.Comment;
 
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Getter
 public class MultipleCommentResponse {
     private List<CommentResponse> comments;
 

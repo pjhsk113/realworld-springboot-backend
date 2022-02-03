@@ -1,11 +1,13 @@
 package study.backend.realworld.application.article.dto.response;
 
+import lombok.Getter;
 import org.springframework.data.domain.Page;
 import study.backend.realworld.application.article.domain.Article;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Getter
 public class MultipleArticlesResponse {
     private List<ArticleResponse> articles;
     private int articlesCount;

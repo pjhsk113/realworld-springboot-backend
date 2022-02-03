@@ -1,10 +1,12 @@
 package study.backend.realworld.application.article.dto.response;
 
+import lombok.Getter;
 import study.backend.realworld.application.article.domain.Comment;
 import study.backend.realworld.application.user.dto.response.ProfileResponse;
 
 import java.time.LocalDateTime;
 
+@Getter
 public class CommentResponse {
     private long id;
     private String body;
