@@ -2,7 +2,6 @@ package study.backend.realworld.application.user.domain;
 
 import io.jsonwebtoken.lang.Assert;
 import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,6 +14,7 @@ import study.backend.realworld.application.user.exception.UserNotFountException;
 import javax.persistence.*;
 import javax.security.sasl.AuthenticationException;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -22,7 +22,6 @@ import java.util.stream.Collectors;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@EqualsAndHashCode
 public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -140,5 +139,18 @@ public class User {
     }
     private Profile refreshFollowingStatus(User user) {
         return user.profile.followingStatus(follows.contains(user));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(email, user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email);
     }
 }

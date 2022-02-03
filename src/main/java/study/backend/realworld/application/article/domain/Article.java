@@ -1,7 +1,6 @@
 package study.backend.realworld.application.article.domain;
 
 import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import study.backend.realworld.application.article.domain.model.ArticleUpdateModel;
@@ -11,13 +10,13 @@ import javax.persistence.*;
 import javax.security.sasl.AuthenticationException;
 import java.util.HashSet;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.Set;
 
 @Table(name = "articles")
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@EqualsAndHashCode
 public class Article extends BaseTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -89,5 +88,18 @@ public class Article extends BaseTime {
         if (user.equals(author) || user.equals(comment.getAuthor())) {
             throw new AuthenticationException("Not authorized to delete this comment");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Article article = (Article) o;
+        return author.equals(article.author) && contents.getTitle().equals(article.contents.getTitle());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(author, contents.getTitle());
     }
 }
