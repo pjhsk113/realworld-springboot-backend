@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import study.backend.realworld.application.IntegrationTestUtils;
+import study.backend.realworld.application.IntegrationTest;
 import study.backend.realworld.application.user.dto.request.LoginRequest;
 import study.backend.realworld.application.user.dto.request.RegisterRequest;
 import study.backend.realworld.application.user.dto.request.UpdateProfileRequest;
@@ -16,7 +16,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-class UserRestControllerTest extends IntegrationTestUtils {
+class UserRestControllerTest extends IntegrationTest {
 
     @DisplayName("올바르지 않은 요청 데이터로 회원가입을 시도하면 실패한다.")
     @MethodSource("invalidRegisterDto")
