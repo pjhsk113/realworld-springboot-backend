@@ -7,6 +7,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
+import study.backend.realworld.application.article.domain.Article;
+import study.backend.realworld.application.article.domain.ArticleContents;
+import study.backend.realworld.application.article.domain.ArticleTitle;
+import study.backend.realworld.application.article.domain.Tag;
+import study.backend.realworld.application.article.repository.ArticleRepository;
 import study.backend.realworld.application.user.domain.Email;
 import study.backend.realworld.application.user.domain.Password;
 import study.backend.realworld.application.user.domain.User;
@@ -15,11 +20,12 @@ import study.backend.realworld.application.user.repository.UserRepository;
 import study.backend.realworld.infra.security.jwt.TokenGenerator;
 
 import javax.transaction.Transactional;
+import java.util.Set;
 
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-public abstract class IntegrationTestUtils {
+public abstract class IntegrationTest {
     protected static final String AUTHORIZATION = "Authorization";
 
     @Autowired
@@ -30,6 +36,9 @@ public abstract class IntegrationTestUtils {
 
     @Autowired
     protected UserRepository userRepository;
+
+    @Autowired
+    protected ArticleRepository articleRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -52,5 +61,15 @@ public abstract class IntegrationTestUtils {
         );
 
         setUpToken = "Token " + tokenGenerator.generateToken(setUpUser.getEmail());
+
+        ArticleContents contents = new ArticleContents(
+                ArticleTitle.of("How to train your dragon"),
+                "Ever wonder how?",
+                "Very carefully.",
+                Set.of(new Tag("dragons"))
+        );
+
+        Article article = new Article(setUpUser, contents);
+        articleRepository.save(article);
     }
 }
