@@ -37,9 +37,9 @@ public class User {
     private Password password;
 
     @OneToMany(cascade = CascadeType.REMOVE)
-    @JoinTable(name = "user_follows",
+    @JoinTable(name = "user_followings",
             joinColumns = @JoinColumn(name = "follower_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "following_id", referencedColumnName = "id"))
+            inverseJoinColumns = @JoinColumn(name = "followee_id", referencedColumnName = "id"))
     private Set<User> follows = new HashSet<>();
 
     @ManyToMany(mappedBy = "userFavorited")
@@ -123,8 +123,8 @@ public class User {
         return article.addComment(this, body);
     }
 
-    public void deleteArticleComment(Article article, long commentId) throws AuthenticationException {
-        article.removeComment(this, commentId);
+    public Comment deleteArticleComment(Article article, long commentId) throws AuthenticationException {
+        return article.removeComment(this, commentId);
     }
 
     public Set<Comment> getArticleComments(Article article) {
