@@ -39,11 +39,11 @@ public class Comment extends BaseTime {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Comment comment = (Comment) o;
-        return Objects.equals(id, comment.id) && Objects.equals(article, comment.article) && Objects.equals(author, comment.author) && Objects.equals(body, comment.body);
+        return Objects.equals(article, comment.article) && Objects.equals(author, comment.author) && Objects.equals(body, comment.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, article, author, body);
+        return Objects.hash(article, author, body);
     }
 }
