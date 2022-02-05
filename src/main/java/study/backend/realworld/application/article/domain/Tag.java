@@ -34,4 +34,11 @@ public class Tag {
     public int hashCode() {
         return Objects.hash(id, value);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder();
+        sb.append(value);
+        return sb.toString();
+    }
 }
