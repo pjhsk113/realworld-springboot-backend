@@ -16,18 +16,22 @@ import javax.security.sasl.AuthenticationException;
 public class CommentCommandExecutor {
     private final ArticleFindProcessor articleFindProcessor;
     private final UserFindProcessor userFindProcessor;
+    private final CommentCommandManager commandManager;
 
     public Comment createComment(User user, String slug, String body) throws UserNotFountException {
         Article article = articleFindProcessor.findBySlug(slug);
-
-        return userFindProcessor.findById(user.getId())
+        Comment comment = userFindProcessor.findById(user.getId())
                 .addCommentToArticle(article, body);
+
+        return commandManager.saveComment(comment);
     }
 
     public void deleteCommentById(User user, String slug, long commentId) throws UserNotFountException, AuthenticationException {
         Article article = articleFindProcessor.findBySlug(slug);
 
-        userFindProcessor.findById(user.getId())
+        Comment comment = userFindProcessor.findById(user.getId())
                 .deleteArticleComment(article, commentId);
+
+        commandManager.deleteComment(comment);
     }
 }
