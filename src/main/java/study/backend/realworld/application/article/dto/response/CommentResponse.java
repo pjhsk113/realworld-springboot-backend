@@ -10,15 +10,15 @@ import java.time.LocalDateTime;
 public class CommentResponse {
     private long id;
     private String body;
-    private LocalDateTime createAt;
-    private LocalDateTime updateAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
     private ProfileResponse author;
 
-    private CommentResponse(long id, String body, LocalDateTime createAt, LocalDateTime updateAt, ProfileResponse author) {
+    private CommentResponse(long id, String body, LocalDateTime createdAt, LocalDateTime updatedAt, ProfileResponse author) {
         this.id = id;
         this.body = body;
-        this.createAt = createAt;
-        this.updateAt = updateAt;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.author = author;
     }
 
