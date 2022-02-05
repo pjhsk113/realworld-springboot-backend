@@ -74,7 +74,7 @@ public class Article extends BaseTime {
         return brandNewComment;
     }
 
-    public void removeComment(User user, long commentId) throws AuthenticationException {
+    public Comment removeComment(User user, long commentId) throws AuthenticationException {
         Comment findComment = comments.stream()
                 .filter(comment -> comment.getId() == commentId)
                 .findFirst()
@@ -82,10 +82,11 @@ public class Article extends BaseTime {
         validateUserDeletePermission(user, findComment);
 
         comments.remove(findComment);
+        return findComment;
     }
 
     private void validateUserDeletePermission(User user, Comment comment) throws AuthenticationException {
-        if (user.equals(author) || user.equals(comment.getAuthor())) {
+        if (!user.equals(author) || !user.equals(comment.getAuthor())) {
             throw new AuthenticationException("Not authorized to delete this comment");
         }
     }
