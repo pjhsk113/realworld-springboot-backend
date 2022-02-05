@@ -50,6 +50,8 @@ public abstract class IntegrationTest {
 
     protected User setUpUser;
 
+    protected Article setUpArticle;
+
     @BeforeEach
     protected void setUp() {
         setUpUser = userRepository.save(
@@ -66,10 +68,10 @@ public abstract class IntegrationTest {
                 ArticleTitle.of("How to train your dragon"),
                 "Ever wonder how?",
                 "Very carefully.",
-                Set.of(new Tag("dragons"))
+                Set.of(new Tag("dragons"), new Tag("training"))
         );
 
         Article article = new Article(setUpUser, contents);
-        articleRepository.save(article);
+        setUpArticle = articleRepository.save(article);
     }
 }

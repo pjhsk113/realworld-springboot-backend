@@ -44,6 +44,27 @@ public class ResultMatcherUtils {
         );
     }
 
+    public static ResultMatcher validSingleComment() {
+        return matchAll(
+
+                jsonPath("$.id").isNumber(),
+                jsonPath("$.body").value("It takes a Jacobian"),
+                jsonPath("$.createdAt", Matchers.matchesPattern(LOCAL_DATE_TIME_PATTERN)),
+                jsonPath("$.updatedAt", Matchers.matchesPattern(LOCAL_DATE_TIME_PATTERN)),
+                validProfileWithPath("author")
+        );
+    }
+
+    public static ResultMatcher validMultipleComment(String path) {
+        return matchAll(
+                jsonPath("$." + path + ".id").isNumber(),
+                jsonPath("$." + path + ".body").value("It takes a Jacobian"),
+                jsonPath("$." + path + ".createdAt", Matchers.matchesPattern(LOCAL_DATE_TIME_PATTERN)),
+                jsonPath("$." + path + ".updatedAt", Matchers.matchesPattern(LOCAL_DATE_TIME_PATTERN)),
+                validProfileWithPath(path + ".author")
+        );
+    }
+
     public static ResultMatcher validProfileWithPath(String path) {
         return matchAll(
                 jsonPath("$." + path).isMap(),
