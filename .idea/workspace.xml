@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="refactor: equals &amp; hashcode 재정의">
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/domain/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/domain/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
       <recent name="study.backend.realworld.infra.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PasswordTest.when_enter_rawPassword_expect_print_encode_password">
+  <component name="RunManager" selected="JUnit.UserTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -93,54 +94,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArticleContentsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.article.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.domain.ArticleContentsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommentTest.articleTitle_not_same_equals_and_hashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.article.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.domain.CommentTest" />
-      <option name="METHOD_NAME" value="articleTitle_not_same_equals_and_hashCode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommentTest.when_same_comment_equals_and_hashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.article.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.domain.CommentTest" />
-      <option name="METHOD_NAME" value="when_same_comment_equals_and_hashCode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PasswordTest.when_enter_rawPassword_expect_print_encode_password" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
@@ -149,24 +103,72 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.PasswordTest" />
-      <option name="METHOD_NAME" value="when_enter_rawPassword_expect_print_encode_password" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.when_change_email_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
+      <option name="METHOD_NAME" value="when_change_email_success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest.when_change_password_success (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.domain.UserName" />
+          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserNameTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
+      <option name="METHOD_NAME" value="when_change_password_success(study.backend.realworld.application.user.domain.Password)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.when_change_password_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
+      <option name="METHOD_NAME" value="when_change_password_success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.when_not_same_user_equals_and_hashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
+      <option name="METHOD_NAME" value="when_not_same_user_equals_and_hashCode" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PasswordTest.when_enter_rawPassword_expect_print_encode_password" />
-        <item itemvalue="JUnit.UserNameTest" />
-        <item itemvalue="JUnit.CommentTest.articleTitle_not_same_equals_and_hashCode" />
-        <item itemvalue="JUnit.CommentTest.when_same_comment_equals_and_hashCode" />
-        <item itemvalue="JUnit.ArticleContentsTest" />
+        <item itemvalue="JUnit.UserTest" />
+        <item itemvalue="JUnit.UserTest.when_change_password_success (1)" />
+        <item itemvalue="JUnit.UserTest.when_change_password_success" />
+        <item itemvalue="JUnit.UserTest.when_change_email_success" />
+        <item itemvalue="JUnit.UserTest.when_not_same_user_equals_and_hashCode" />
       </list>
     </recent_temporary>
   </component>
@@ -234,35 +236,8 @@
       <workItem from="1643950129346" duration="16199000" />
       <workItem from="1644041474367" duration="12811000" />
       <workItem from="1644126227964" duration="11412000" />
-      <workItem from="1644315746132" duration="2506000" />
-    </task>
-    <task id="LOCAL-00109" summary="feat: 태그 조회 api 분리&#10;&#10;- article 하위 패키지로 세분화">
-      <created>1643354605738</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1643354605738</updated>
-    </task>
-    <task id="LOCAL-00110" summary="feat: article 조회 세부 구현 분리&#10;&#10;- 비즈니스 로직과 세부 구현을 분리함&#10;- 의존성 최소화">
-      <created>1643428773921</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1643428773921</updated>
-    </task>
-    <task id="LOCAL-00111" summary="feat: 분리한 조회 로직 API에 적용">
-      <created>1643428947855</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1643428947855</updated>
-    </task>
-    <task id="LOCAL-00112" summary="feat: Tag 관련 로직 분리">
-      <created>1643428983793</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1643428983793</updated>
+      <workItem from="1644315746132" duration="2588000" />
+      <workItem from="1644384769588" duration="4885000" />
     </task>
     <task id="LOCAL-00113" summary="refactor: tag 새로고침 기능이 setter 대신 새로운 객체를 반환하도록 변경">
       <created>1643526495798</created>
@@ -579,7 +554,35 @@
       <option name="project" value="LOCAL" />
       <updated>1644137868156</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="test: 도메인 단위테스트 추가 - Username">
+      <created>1644324423156</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1644324423157</updated>
+    </task>
+    <task id="LOCAL-00159" summary="test: 도메인 단위테스트 추가 - Image">
+      <created>1644324436037</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1644324436037</updated>
+    </task>
+    <task id="LOCAL-00160" summary="test: 도메인 단위테스트 추가 - Password">
+      <created>1644324445110</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1644324445110</updated>
+    </task>
+    <task id="LOCAL-00161" summary="test: 도메인 단위테스트 추가 - User">
+      <created>1644397275679</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1644397275680</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,10 +618,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="refactor: article update nullable 필드 처리를 위한 로직 추가" />
-    <MESSAGE value="test: article update 테스트 추가" />
-    <MESSAGE value="refactor: equals &amp; hashcode 재정의" />
-    <MESSAGE value="test: article favorite &amp; unFavorite 기능 테스트 추가" />
     <MESSAGE value="test: update favorite api test beforEach 추가" />
     <MESSAGE value="refactor: IntegrationTestUtils 이름 변경 및 setUp 추가&#10;&#10;- IntegrationTestUtils -&gt; IntegrationTest로 이름 변경&#10;- setUp article 추가" />
     <MESSAGE value="feat: ResultMatcher용 Util 클래스 추가" />
@@ -640,7 +639,11 @@
     <MESSAGE value="test: 도메인 단위테스트 추가 - Article" />
     <MESSAGE value="test: 도메인 단위테스트 추가 - Comment" />
     <MESSAGE value="test: 도메인 단위테스트 추가 - Tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="test: 도메인 단위테스트 추가 - Tag" />
+    <MESSAGE value="test: 도메인 단위테스트 추가 - Username" />
+    <MESSAGE value="test: 도메인 단위테스트 추가 - Image" />
+    <MESSAGE value="test: 도메인 단위테스트 추가 - Password" />
+    <MESSAGE value="test: 도메인 단위테스트 추가 - User" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: 도메인 단위테스트 추가 - User" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

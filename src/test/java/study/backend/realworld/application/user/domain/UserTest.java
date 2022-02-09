@@ -20,24 +20,36 @@ class UserTest {
 
     @Test
     void when_create_user_email_can_not_be_null() {
+        Email email = null;
+        UserName userName = new UserName("user");
+        Password password = Password.of("password", passwordEncoder);
+
         assertThatThrownBy(() -> {
-            User.of(null, new UserName("user"), Password.of("password", passwordEncoder));
+            User.of(email, userName, password);
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("email has null");
     }
 
     @Test
     void when_create_user_username_can_not_be_null() {
+        Email email = new Email("user@email.com");
+        UserName userName = null;
+        Password password = Password.of("password", passwordEncoder);
+
         assertThatThrownBy(() -> {
-            User.of(new Email("user@email.com"), null, Password.of("password", passwordEncoder));
+            User.of(email, userName, password);
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("username has null");
     }
 
     @Test
     void when_create_user_password_can_not_be_null() {
+        Email email = new Email("user@email.com");
+        UserName userName = new UserName("user");
+        Password password = null;
+
         assertThatThrownBy(() -> {
-            User.of(new Email("user@email.com"), new UserName("user"), null);
+            User.of(email, userName, password);
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("password has null");
     }
