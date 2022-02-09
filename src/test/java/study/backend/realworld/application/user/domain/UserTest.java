@@ -1,0 +1,115 @@
+package study.backend.realworld.application.user.domain;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+@ExtendWith(MockitoExtension.class)
+class UserTest {
+
+    @Mock
+    private PasswordEncoder passwordEncoder;
+
+    @Test
+    void when_create_user_email_can_not_be_null() {
+        assertThatThrownBy(() -> {
+            User.of(null, new UserName("user"), Password.of("password", passwordEncoder));
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("email has null");
+    }
+
+    @Test
+    void when_create_user_username_can_not_be_null() {
+        assertThatThrownBy(() -> {
+            User.of(new Email("user@email.com"), null, Password.of("password", passwordEncoder));
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("username has null");
+    }
+
+    @Test
+    void when_create_user_password_can_not_be_null() {
+        assertThatThrownBy(() -> {
+            User.of(new Email("user@email.com"), new UserName("user"), null);
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("password has null");
+    }
+
+    @Test
+    void when_create_user_success() {
+        User user = createMockUser();
+
+        assertThat(user.getEmail()).isEqualTo(new Email("user@email.com"));
+        assertThat(user.getName()).isEqualTo(new UserName("user"));
+        assertThat(user.getPassword()).isEqualTo(Password.of("password", passwordEncoder));
+        assertThat(user.getImage()).isNull();
+        assertThat(user.getBio()).isNull();
+    }
+
+    @DisplayName("같은 요소를 담은 User 객체는 같은 hashcode를 반환한다.")
+    @Test
+    void when_same_user_equals_and_hashCode() {
+        User user = User.of(new Email("user@email.com"), new UserName("user"), Password.of("password", passwordEncoder));
+        User sameUser = User.of(new Email("user@email.com"), new UserName("user"), Password.of("password", passwordEncoder));
+
+        assertThat(user)
+                .isEqualTo(sameUser)
+                .hasSameHashCodeAs(sameUser);
+    }
+
+    @DisplayName("서로 다른 요소를 담은 User 객체는 다른 hashcode를 반환한다.")
+    @Test
+    void when_not_same_user_equals_and_hashCode() {
+        User user = User.of(new Email("user@email.com"), new UserName("user"), Password.of("password", passwordEncoder));
+        User otherUser = User.of(new Email("otherUser@email.com"), new UserName("otherUser"), Password.of("other-password", passwordEncoder));
+
+        assertThat(user)
+                .isNotEqualTo(otherUser)
+                .doesNotHaveSameHashCodeAs(otherUser);
+    }
+
+    @Test
+    void when_change_email_success() {
+        User user = createMockUser();
+
+        Email changedEmail = new Email("change@email.com");
+        user.changeEmail(changedEmail);
+
+        assertThat(user.getEmail()).isEqualTo(changedEmail);
+    }
+
+    @Test
+    void when_change_userName_success() {
+        User user = createMockUser();
+
+        UserName changedName = new UserName("changeUser");
+        user.changeName(changedName);
+
+        assertThat(user.getName()).isEqualTo(changedName);
+    }
+
+    @Test
+    void when_change_password_success(@Mock Password changedPassword) {
+        User user = createMockUser();
+
+        user.changePassword(changedPassword);
+        user.matchesPassword("changedPassword", passwordEncoder);
+
+        assertThat(user.getPassword()).isEqualTo(changedPassword);
+        verify(changedPassword, times(1)).matchesPassword("changedPassword", passwordEncoder);
+    }
+
+    private User createMockUser() {
+        Email email = new Email("user@email.com");
+        UserName userName = new UserName("user");
+        Password password = Password.of("password", passwordEncoder);
+        return User.of(email, userName, password);
+    }
+}
