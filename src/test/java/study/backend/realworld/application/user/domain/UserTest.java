@@ -18,6 +18,7 @@ class UserTest {
     @Mock
     private PasswordEncoder passwordEncoder;
 
+    @DisplayName("user 정보 생성 시 email은 null일 수 없다.")
     @Test
     void when_create_user_email_can_not_be_null() {
         Email email = null;
@@ -30,6 +31,7 @@ class UserTest {
                 .hasMessage("email has null");
     }
 
+    @DisplayName("user 정보 생성 시 이름은 null일 수 없다.")
     @Test
     void when_create_user_username_can_not_be_null() {
         Email email = new Email("user@email.com");
@@ -42,6 +44,7 @@ class UserTest {
                 .hasMessage("username has null");
     }
 
+    @DisplayName("user 정보 생성 시 비밀번호는 null일 수 없다.")
     @Test
     void when_create_user_password_can_not_be_null() {
         Email email = new Email("user@email.com");
@@ -54,6 +57,7 @@ class UserTest {
                 .hasMessage("password has null");
     }
 
+    @DisplayName("user 정보 생성 성공")
     @Test
     void when_create_user_success() {
         User user = createMockUser();
@@ -87,6 +91,7 @@ class UserTest {
                 .doesNotHaveSameHashCodeAs(otherUser);
     }
 
+    @DisplayName("user email 업데이트 성공")
     @Test
     void when_change_email_success() {
         User user = createMockUser();
@@ -97,6 +102,7 @@ class UserTest {
         assertThat(user.getEmail()).isEqualTo(changedEmail);
     }
 
+    @DisplayName("user 이름 업데이트 성공")
     @Test
     void when_change_userName_success() {
         User user = createMockUser();
@@ -107,6 +113,7 @@ class UserTest {
         assertThat(user.getName()).isEqualTo(changedName);
     }
 
+    @DisplayName("user 비밀번호 업데이트 성공")
     @Test
     void when_change_password_success(@Mock Password changedPassword) {
         User user = createMockUser();
