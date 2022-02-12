@@ -112,7 +112,7 @@ class ArticleFindQueryExecutorTest {
         given(userFindProcessor.findByUserName(any())).willThrow(new UserNotFountException());
 
         assertThatThrownBy(() ->
-            articleFindQueryExecutor.findArticleFavoritedByUserName(any(), pageable))
+                articleFindQueryExecutor.findArticleFavoritedByUserName(any(), pageable))
                 .isInstanceOf(UserNotFountException.class)
                 .hasMessage("member not found");
     }
@@ -147,7 +147,7 @@ class ArticleFindQueryExecutorTest {
         given(articleFindProcessor.findBySlug(anyString())).willThrow(new NoSuchElementException());
 
         assertThatThrownBy(() ->
-                        articleFindQueryExecutor.findArticleBySlug("slug")
-                ).isInstanceOf(NoSuchElementException.class);
+                articleFindQueryExecutor.findArticleBySlug("slug"))
+                .isInstanceOf(NoSuchElementException.class);
     }
 }
