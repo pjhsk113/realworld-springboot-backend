@@ -21,10 +21,10 @@ class ImageTest {
     @Test
     void when_not_same_image_equals_and_hashCode() {
         Image imageAddress = new Image("image-address");
-        Image sameImageAddress = new Image("image-address");
+        Image otherImageAddress = new Image("other-image-address");
 
         assertThat(imageAddress)
-                .isNotEqualTo(sameImageAddress)
-                .doesNotHaveSameHashCodeAs(sameImageAddress);
+                .isNotEqualTo(otherImageAddress)
+                .doesNotHaveSameHashCodeAs(otherImageAddress);
     }
 }
