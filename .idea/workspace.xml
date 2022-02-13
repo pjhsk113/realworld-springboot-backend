@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="">
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="test: UserTest DisplayName 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/domain/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/study/backend/realworld/application/user/domain/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +69,11 @@
       <recent name="study.backend.realworld.application.user" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="study.backend.realworld.application.article.application" />
       <recent name="study.backend.realworld.application.user.domain" />
       <recent name="study.backend.realworld.application.article.domain" />
       <recent name="study.backend.realworld.application.article.api.tag" />
       <recent name="study.backend.realworld.application.article.api.comment" />
-      <recent name="study.backend.realworld.application.article.api" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="study.backend.realworld.application.article.api.comment" />
@@ -82,7 +81,7 @@
       <recent name="study.backend.realworld.infra.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserTest">
+  <component name="RunManager" selected="JUnit.ArticleCommandExecutorTest.when_delete_article_user_not_found_will_return_UserNotFoundException (1)">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -94,80 +93,81 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleCommandExecutorTest.when_create (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.article.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.when_change_email_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="realWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
-      <option name="METHOD_NAME" value="when_change_email_success" />
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.application" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.application.ArticleCommandExecutorTest" />
+      <option name="METHOD_NAME" value="when_create(study.backend.realworld.application.article.domain.ArticleContents,study.backend.realworld.application.user.domain.User)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.when_change_password_success (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleCommandExecutorTest.when_create (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.article.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
-      <option name="METHOD_NAME" value="when_change_password_success(study.backend.realworld.application.user.domain.Password)" />
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.application" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.application.ArticleCommandExecutorTest" />
+      <option name="METHOD_NAME" value="when_create(study.backend.realworld.application.user.domain.User,study.backend.realworld.application.article.domain.ArticleContents)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.when_change_password_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleCommandExecutorTest.when_create (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.article.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
-      <option name="METHOD_NAME" value="when_change_password_success" />
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.application" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.application.ArticleCommandExecutorTest" />
+      <option name="METHOD_NAME" value="when_create(study.backend.realworld.application.user.domain.User,study.backend.realworld.application.article.domain.ArticleContents,java.util.Set)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.when_not_same_user_equals_and_hashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleCommandExecutorTest.when_delete_article_user_not_found_will_return_UserNotFoundException (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="realWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="study.backend.realworld.application.user.domain.*" />
+          <option name="PATTERN" value="study.backend.realworld.application.article.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="study.backend.realworld.application.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.user.domain.UserTest" />
-      <option name="METHOD_NAME" value="when_not_same_user_equals_and_hashCode" />
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.application" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.application.ArticleCommandExecutorTest" />
+      <option name="METHOD_NAME" value="when_delete_article_user_not_found_will_return_UserNotFoundException(study.backend.realworld.application.user.domain.User)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleCommandExecutorTest.when_delete_article_user_not_found_will_return_UserNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="realWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="study.backend.realworld.application.article.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="study.backend.realworld.application.article.application" />
+      <option name="MAIN_CLASS_NAME" value="study.backend.realworld.application.article.application.ArticleCommandExecutorTest" />
+      <option name="METHOD_NAME" value="when_delete_article_user_not_found_will_return_UserNotFoundException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTest" />
-        <item itemvalue="JUnit.UserTest.when_change_password_success (1)" />
-        <item itemvalue="JUnit.UserTest.when_change_password_success" />
-        <item itemvalue="JUnit.UserTest.when_change_email_success" />
-        <item itemvalue="JUnit.UserTest.when_not_same_user_equals_and_hashCode" />
+        <item itemvalue="JUnit.ArticleCommandExecutorTest.when_delete_article_user_not_found_will_return_UserNotFoundException (1)" />
+        <item itemvalue="JUnit.ArticleCommandExecutorTest.when_delete_article_user_not_found_will_return_UserNotFoundException" />
+        <item itemvalue="JUnit.ArticleCommandExecutorTest.when_create (3)" />
+        <item itemvalue="JUnit.ArticleCommandExecutorTest.when_create (4)" />
+        <item itemvalue="JUnit.ArticleCommandExecutorTest.when_create (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -237,56 +237,11 @@
       <workItem from="1644041474367" duration="12811000" />
       <workItem from="1644126227964" duration="11412000" />
       <workItem from="1644315746132" duration="2588000" />
-      <workItem from="1644384769588" duration="4885000" />
-    </task>
-    <task id="LOCAL-00113" summary="refactor: tag 새로고침 기능이 setter 대신 새로운 객체를 반환하도록 변경">
-      <created>1643526495798</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1643526495798</updated>
-    </task>
-    <task id="LOCAL-00114" summary="refactor: tag 타입 변환 메서드명 변경">
-      <created>1643526521115</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1643526521115</updated>
-    </task>
-    <task id="LOCAL-00115" summary="refactor: 글 업데이트 정보 매개변수를 명확한 이름으로 변경">
-      <created>1643526662648</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1643526662648</updated>
-    </task>
-    <task id="LOCAL-00116" summary="feat: 조회용 비즈니스 로직을 담당하는 클래스명 변경">
-      <created>1643526746146</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1643526746146</updated>
-    </task>
-    <task id="LOCAL-00117" summary="feat: CUD를 담당하는 비즈니스 클래스 생성&#10;&#10;- 비즈니스 로직과 세부 구현을 분리해 비즈니스 로직에서 흐름 파악이 용이하도록 변경">
-      <created>1643526879406</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1643526879407</updated>
-    </task>
-    <task id="LOCAL-00118" summary="refactor: article api에서 의존하던 서비스 레이어의 클래스를 분리&#10;&#10;- R과 CUD를 분리&#10;- 모든 비즈니스를 담고있던 ArticleService 제거">
-      <created>1643527054171</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1643527054171</updated>
-    </task>
-    <task id="LOCAL-00119" summary="feat: 요청 정보와 매핑되는 Tag 목록을 반환하는 메서드 추가">
-      <created>1643527180760</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1643527180760</updated>
+      <workItem from="1644384769588" duration="5730000" />
+      <workItem from="1644479630952" duration="3161000" />
+      <workItem from="1644562556591" duration="1561000" />
+      <workItem from="1644641813435" duration="9271000" />
+      <workItem from="1644729467308" duration="3546000" />
     </task>
     <task id="LOCAL-00120" summary="refactor: tag 조회 api가 참조하는 클래스명 변경">
       <created>1643527230255</created>
@@ -582,7 +537,56 @@
       <option name="project" value="LOCAL" />
       <updated>1644397275680</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="test: 도메인 단위테스트 추가 - User&#10;&#10;- 코드 리팩터링">
+      <created>1644397509546</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1644397509546</updated>
+    </task>
+    <task id="LOCAL-00163" summary="test: UserTest DisplayName 추가">
+      <created>1644400582939</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1644400582939</updated>
+    </task>
+    <task id="LOCAL-00164" summary="test: User 서비스 테스트 틀 추가&#10;&#10;- find(조회)에 대한 테스츠 먼저 작성하기">
+      <created>1644487591058</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1644487591059</updated>
+    </task>
+    <task id="LOCAL-00165" summary="test: Article Find용 서비스 단위 테스트 추가">
+      <created>1644649666488</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1644649666488</updated>
+    </task>
+    <task id="LOCAL-00166" summary="test: Image 테스트 코드 수정&#10;&#10;- 조건 수정">
+      <created>1644651212975</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1644651212975</updated>
+    </task>
+    <task id="LOCAL-00167" summary="refactor: 코드 재정렬">
+      <created>1644651251457</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1644651251457</updated>
+    </task>
+    <task id="LOCAL-00168" summary="feat: 테스트코드 커버리지 측정을 위한 jacoco 추가">
+      <created>1644652212229</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1644652212229</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,13 +622,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="test: update favorite api test beforEach 추가" />
-    <MESSAGE value="refactor: IntegrationTestUtils 이름 변경 및 setUp 추가&#10;&#10;- IntegrationTestUtils -&gt; IntegrationTest로 이름 변경&#10;- setUp article 추가" />
-    <MESSAGE value="feat: ResultMatcher용 Util 클래스 추가" />
-    <MESSAGE value="refactor: 상속받는 클래스명 변경" />
-    <MESSAGE value="test: article Test 코드 보강" />
-    <MESSAGE value="fix: 필드명 오타수정" />
-    <MESSAGE value="feat: comment 저장 로직 추가" />
     <MESSAGE value="fix: Article validation 로직 오류 수정" />
     <MESSAGE value="refactor: Comment equals&amp;hash수정" />
     <MESSAGE value="test: Comment 생성 테스트 추가" />
@@ -643,7 +640,14 @@
     <MESSAGE value="test: 도메인 단위테스트 추가 - Image" />
     <MESSAGE value="test: 도메인 단위테스트 추가 - Password" />
     <MESSAGE value="test: 도메인 단위테스트 추가 - User" />
-    <option name="LAST_COMMIT_MESSAGE" value="test: 도메인 단위테스트 추가 - User" />
+    <MESSAGE value="test: 도메인 단위테스트 추가 - User&#10;&#10;- 코드 리팩터링" />
+    <MESSAGE value="test: UserTest DisplayName 추가" />
+    <MESSAGE value="test: User 서비스 테스트 틀 추가&#10;&#10;- find(조회)에 대한 테스츠 먼저 작성하기" />
+    <MESSAGE value="test: Article Find용 서비스 단위 테스트 추가" />
+    <MESSAGE value="test: Image 테스트 코드 수정&#10;&#10;- 조건 수정" />
+    <MESSAGE value="refactor: 코드 재정렬" />
+    <MESSAGE value="feat: 테스트코드 커버리지 측정을 위한 jacoco 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 테스트코드 커버리지 측정을 위한 jacoco 추가" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
