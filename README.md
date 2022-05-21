@@ -6,6 +6,7 @@
 
 ### developed based on [RealWorld API Spec](./api/README.md)
 
-# Getting started
+This application uses Spring Boot with Java 11 and the database uses MariaDB.
+
 
 
