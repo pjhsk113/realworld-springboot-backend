@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import study.backend.realworld.application.article.domain.Article;
 import study.backend.realworld.application.article.domain.Tag;
 import study.backend.realworld.application.article.repository.ArticleRepository;
@@ -13,6 +14,7 @@ import study.backend.realworld.application.user.domain.UserName;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+@Transactional(readOnly = true)
 @Component
 @RequiredArgsConstructor
 public class ArticleFindProcessor {

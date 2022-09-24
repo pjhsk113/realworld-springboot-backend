@@ -40,7 +40,6 @@ public class ArticleCommandExecutor {
                 .updateArticle(findArticle, updateArticleInformation);
     }
 
-
     public void deleteArticleBySlug(User user, String slug) throws UserNotFountException {
         User findUser = userFindProcessor.findById(user.getId());
         articleCommandManager.deleteArticle(findUser, slug);

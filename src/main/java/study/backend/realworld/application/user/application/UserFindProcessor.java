@@ -2,11 +2,13 @@ package study.backend.realworld.application.user.application;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import study.backend.realworld.application.user.domain.User;
 import study.backend.realworld.application.user.domain.UserName;
 import study.backend.realworld.application.user.exception.UserNotFountException;
 import study.backend.realworld.application.user.repository.UserRepository;
 
+@Transactional(readOnly = true)
 @Component
 @RequiredArgsConstructor
 public class UserFindProcessor {

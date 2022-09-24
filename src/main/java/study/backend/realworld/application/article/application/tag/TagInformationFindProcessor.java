@@ -2,6 +2,7 @@ package study.backend.realworld.application.article.application.tag;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import study.backend.realworld.application.article.domain.ArticleContents;
 import study.backend.realworld.application.article.domain.Tag;
 import study.backend.realworld.application.article.repository.TagRepository;
@@ -11,6 +12,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Transactional(readOnly = true)
 @Component
 @RequiredArgsConstructor
 public class TagInformationFindProcessor {
