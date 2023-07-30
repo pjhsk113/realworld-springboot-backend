@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="test: UserTest DisplayName 추가">
+    <list default="true" id="8dda0546-044c-4efc-a81e-91c17e992cef" name="Default Changelist" comment="test: Article Service 단위 테스트">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/98d2c2f1-4f06-4132-b5c2-fad537341f86.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/adapter/in/web/ArticleCreationApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/adapter/out/persistence/ArticleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/application/port/in/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/application/port/out/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/domain/Article.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/domain/ArticleContents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/domain/ArticleTitle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/domain/BaseTime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/domain/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/domain/Tag.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -32,30 +44,25 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1w7SROFBQZ3TySYjwT0mxklwKd2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mariadb" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a32833a543ea4a3496f6821fd7fca92c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -64,6 +71,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/study/backend/realworld/article/adapter/out/persistence" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="study.backend.realworld.application.user" />
@@ -76,12 +86,13 @@
       <recent name="study.backend.realworld.application.article.api.comment" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="study.backend.realworld.article.domain.model" />
       <recent name="study.backend.realworld.application.article.api.comment" />
       <recent name="study.backend.realworld.application.user.domain.exception" />
       <recent name="study.backend.realworld.infra.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArticleCommandExecutorTest.when_delete_article_user_not_found_will_return_UserNotFoundException (1)">
+  <component name="RunManager" selected="Spring Boot.RealWorldApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -242,6 +253,8 @@
       <workItem from="1644562556591" duration="1561000" />
       <workItem from="1644641813435" duration="9271000" />
       <workItem from="1644729467308" duration="3546000" />
+      <workItem from="1681041096350" duration="13339000" />
+      <workItem from="1681642579243" duration="8416000" />
     </task>
     <task id="LOCAL-00120" summary="refactor: tag 조회 api가 참조하는 클래스명 변경">
       <created>1643527230255</created>
@@ -614,7 +627,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -647,23 +659,13 @@
     <MESSAGE value="test: Image 테스트 코드 수정&#10;&#10;- 조건 수정" />
     <MESSAGE value="refactor: 코드 재정렬" />
     <MESSAGE value="feat: 테스트코드 커버리지 측정을 위한 jacoco 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 테스트코드 커버리지 측정을 위한 jacoco 추가" />
+    <MESSAGE value="test: Article Service 단위 테스트" />
+    <MESSAGE value="refactor: README" />
+    <MESSAGE value="refactor: Article 트랜잭션 추가" />
+    <MESSAGE value="refactor: 헥사고날 아키텍쳐 적용해보기 - adapter 구조 만들기" />
+    <MESSAGE value="refactor: 헥사고날 아키텍쳐 적용해보기 - domain" />
+    <MESSAGE value="refactor: 헥사고날 아키텍쳐 적용해보기 - application port 생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 헥사고날 아키텍쳐 적용해보기 - application port 생성" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/application/user/api/UserRestController.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/study/backend/realworld/application/article/api/comment/ArticleCommentCreationApi.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

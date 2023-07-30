@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-212.5457.46">
+  <component name="dataSourceStorageLocal" created-in="IU-223.8836.41">
     <data-source name="realworld_db@localhost" uuid="98d2c2f1-4f06-4132-b5c2-fad537341f86">
       <database-info product="MariaDB" version="10.6.3-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.7.3" dbms="MARIADB" exact-version="10.6.3" exact-driver-version="2.7">
         <extra-name-characters>#@</extra-name-characters>
